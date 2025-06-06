@@ -85,7 +85,7 @@ public class SemiFlowMenstrualAPP {
                         switch (pregnancyChoice) {
                             case 1 -> System.out.println("We’re here to support your journey.");
                             case 2 -> {
-                                System.out.println("Awesome! Let’s help you understand your body better.");
+                                System.out.println("Awesome! Lets help you understand your body better.");
 				MenstrualCycleInput.getMenstrualCycleInput(input);
                                 
                             }

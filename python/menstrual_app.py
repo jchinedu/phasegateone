@@ -43,4 +43,10 @@ def main():
         print("Invalid date entered. Please enter a valid date.")
         return
 
+    print(f"\nHello {name}, your last menstrual cycle started on {day:02d}-{month:02d}-{year}.\n")
+    print_period_flow_dates(day, month, year)
+    print_ovulation_period(day, month, year)
+    print_safe_period(day, month, year)
+
+
 

@@ -16,3 +16,7 @@ class TestMenstrualCycle(unittest.TestCase):
     def test_add_days_simple(self):
         day, month, year = add_days(10, 6, 2025, 5)
         self.assertEqual((day, month, year), (15, 6, 2025))
+
+    def test_add_days_month_rollover(self):
+        day, month, year = add_days(28, 2, 2024, 3)
+        self.assertEqual((day, month, year), (2, 3, 2024))

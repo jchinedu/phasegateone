@@ -20,3 +20,10 @@ def print_ovulation_period(start_day, start_month, start_year):
     start = add_days(start_day, start_month, start_year, 12)
     end = add_days(start_day, start_month, start_year, 16)
     print(f"Ovulation Period: Start: {start[0]:02d}-{start[1]:02d}-{start[2]} End: {end[0]:02d}-{end[1]:02d}-{end[2]}")
+def print_safe_period(start_day, start_month, start_year):
+    before_start = add_days(start_day, start_month, start_year, 0)
+    before_end = add_days(start_day, start_month, start_year, 11)
+    after_start = add_days(start_day, start_month, start_year, 17)
+    after_end = add_days(start_day, start_month, start_year, 28)
+    print(f"Safe Period Before Fertile Window: {before_start[0]:02d}-{before_start[1]:02d}-{before_start[2]} to {before_end[0]:02d}-{before_end[1]:02d}-{before_end[2]}")
+    print(f"Safe Period After Fertile Window: {after_start[0]:02d}-{after_start[1]:02d}-{after_start[2]} to {after_end[0]:02d}-{after_end[1]:02d}-{after_end[2]}")

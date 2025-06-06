@@ -39,3 +39,8 @@ def main():
     month = int(input("Month (1-12): "))
     year = int(input("Year (e.g., 2025): "))
 
+    if not is_valid_date(day, month, year):
+        print("Invalid date entered. Please enter a valid date.")
+        return
+
+

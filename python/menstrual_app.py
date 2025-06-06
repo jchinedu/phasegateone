@@ -11,3 +11,8 @@ def add_days(day, month, year, days_to_add):
     return date.day, date.month, date.year
 def is_leap_year(year):
     return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
+def print_period_flow_dates(start_day, start_month, start_year):
+    print("Your Period flow dates (5 Days):")
+    for i in range(5):
+        day, month, year = add_days(start_day, start_month, start_year, i)
+        print(f"Day {i+1}: {day:02d}-{month:02d}-{year}")

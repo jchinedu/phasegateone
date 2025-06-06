@@ -20,6 +20,11 @@ public class MenstrualCycleInputTest {
         assertTrue(MenstrualCycleInput.printLeapYear(2024));
         assertTrue(MenstrualCycleInput.printLeapYear(2000));
     }
+  @Test
+    public void testPrintLeapYear_NonLeapYear() {
+        assertFalse(MenstrualCycleInput.printLeapYear(2023));
+        assertFalse(MenstrualCycleInput.printLeapYear(1900));
+    }
 
     
 }

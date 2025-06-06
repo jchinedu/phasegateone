@@ -12,3 +12,7 @@ class TestMenstrualCycle(unittest.TestCase):
     def test_leap_year(self):
         self.assertTrue(is_leap_year(2024))
         self.assertFalse(is_leap_year(2023))
+
+    def test_add_days_simple(self):
+        day, month, year = add_days(10, 6, 2025, 5)
+        self.assertEqual((day, month, year), (15, 6, 2025))

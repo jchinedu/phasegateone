@@ -25,6 +25,13 @@ public class MenstrualCycleInputTest {
         assertFalse(MenstrualCycleInput.printLeapYear(2023));
         assertFalse(MenstrualCycleInput.printLeapYear(1900));
     }
+   @Test
+    public void testAddToDays_YearRollover() {
+        int[] result = MenstrualCycleInput.addToDays(30, 12, 2025, 5);
+        assertEquals(4, result[0]);
+        assertEquals(1, result[1]);
+        assertEquals(2026, result[2]);
+}
 
     
 }

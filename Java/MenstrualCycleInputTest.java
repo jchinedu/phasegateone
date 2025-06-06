@@ -10,6 +10,16 @@ public class MenstrualCycleInputTest {
     public void testIsValidDate_ValidDate() {
         assertTrue(MenstrualCycleInput.isValidDate(15, 6, 2025));
     }
+    
+   @Test
+    public void testIsValidDate_InvalidDate() {
+        assertFalse(MenstrualCycleInput.isValidDate(31, 2, 2025));
+    }
+  @Test
+    public void testPrintLeapYear_LeapYear() {
+        assertTrue(MenstrualCycleInput.printLeapYear(2024));
+        assertTrue(MenstrualCycleInput.printLeapYear(2000));
+    }
 
     
 }

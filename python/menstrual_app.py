@@ -49,4 +49,6 @@ def main():
     print_safe_period(day, month, year)
 
 
+main()
+
 

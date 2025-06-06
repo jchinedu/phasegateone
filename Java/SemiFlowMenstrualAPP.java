@@ -38,7 +38,7 @@ public class SemiFlowMenstrualAPP {
                     System.out.println("8. Medical professional");
                     System.out.println("9. Others");
 
-                    System.out.print("Enter your choice (1–9): ");
+                    System.out.print("Enter your choice (1 to 9): ");
                     int source = input.nextInt();
 		    input.nextLine();
                  
@@ -74,7 +74,7 @@ public class SemiFlowMenstrualAPP {
                         System.out.println("\nWelcome to Semi Flow!");
                         System.out.println("Are you pregnant?");
                         System.out.println("1. No, but I want to be");
-                        System.out.println("2. No, I’m here to understand my body better");
+                        System.out.println("2. No, I am here to understand my body better");
                         System.out.println("3. Yes, I am");
 
                         System.out.print("Enter your choice: ");

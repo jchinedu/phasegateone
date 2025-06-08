@@ -27,6 +27,9 @@ public static void main(String[] args) {
                 }
                 break;
             }
+	       System.out.print("Enter unit price: ");
+            double price = getValidDouble(scanner);
+
 
 
 

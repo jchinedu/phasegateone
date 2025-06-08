@@ -35,6 +35,9 @@ public static void main(String[] args) {
             quantities.add(qty);
             unitPrices.add(price);
         }
+	
+		System.out.print("Enter cashier name: ");
+        String cashierName = scanner.nextLine();
 
 }
 

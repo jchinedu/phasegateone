@@ -134,7 +134,14 @@ public static void main(String[] args) {
         System.out.println("Date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
         System.out.println("======================================");
     }
-
+	private static double handlePayment(Scanner scanner, double totalDue) {
+        System.out.println("Select payment method:");
+        System.out.println("1. Cash");
+        System.out.println("2. Card");
+        System.out.println("3. Mobile Money");
+        System.out.print("Enter your choice: ");
+        int paymentChoice = getValidInt(scanner);
+        scanner.nextLine();
 
 
 

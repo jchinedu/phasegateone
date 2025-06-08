@@ -46,3 +46,11 @@ def handle_payment(total_due):
     else:
         print("Invalid payment method. Please try again.")
         return handle_payment(total_due)
+def main():
+    print("Welcome to SemiColon Stores Checkout System!")
+
+    customer_name = input("Enter customer name: ")
+
+    product_names = []
+    quantities = []
+    unit_prices = []

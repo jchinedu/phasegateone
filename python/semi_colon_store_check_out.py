@@ -6,3 +6,9 @@ def get_valid_int(prompt):
             return int(input(prompt))
         except ValueError:
             print("Invalid input. Enter a valid integer: ")
+def get_valid_float(prompt):
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("Invalid input. Enter a valid number: ")

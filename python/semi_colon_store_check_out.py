@@ -88,3 +88,24 @@ def main():
     for name, qty, price in zip(product_names, quantities, unit_prices):
         line_total = qty * price
         print(f"{name:<15} {qty:>5} {price:>10.2f} {line_total:>12.2f}")
+    print("-------------------------------------------------")
+    print(f"Subtotal: {subtotal:35.2f}")
+    print(f"Discount ({discount_percent:.2f}%): {discount_amount:27.2f}")
+    print(f"VAT  @ 7.5% : {vat:31.2f}")
+    print("-------------------------------------------------")
+    print(f"TOTAL DUE: {total_due:35.2f}")
+    print()
+    print("=====================================================")
+    print(f"THIS IS NOT A RECEIPT, KINDLY PAY THIS AMOUNT: {total_due:.2f}")
+    print("=====================================================")
+    print()
+    
+    amount_paid = handle_payment(total_due)
+
+    print_header()
+    print("RECEIPT - SEMICOLON STORES")
+    print(f"Customer: {customer_name}")
+    print(f"Cashier: {cashier_name}")
+    print("----------------------------------------------")
+    print(f"{'ITEM':<15} {'QTY':>5} {'PRICE':>10} {'TOTAL':>12}")
+    print("----------------------------------------------")

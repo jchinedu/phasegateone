@@ -25,3 +25,24 @@ def handle_payment(total_due):
     print("2. Card")
     print("3. Mobile Money")
     payment_choice = get_valid_int("Enter your choice: ")
+	
+    if payment_choice == 1:
+        amount_paid = get_valid_float("Enter amount paid by customer: ")
+        if amount_paid < total_due:
+            print(f"Insufficient payment. Please pay at least: {total_due:.2f}")
+            return handle_payment(total_due)
+        else:
+            change = amount_paid - total_due
+            print(f"Change to give back: {change:.2f}")
+            return amount_paid
+    elif payment_choice == 2:
+        card_number = input("Enter card number (simulate): ")
+        print(f"Payment of {total_due:.2f} processed via card ending with {card_number[-4:]}")
+        return total_due
+    elif payment_choice == 3:
+        mm_ref = input("Enter mobile money reference: ")
+        print(f"Payment of {total_due:.2f} processed with reference {mm_ref}")
+        return total_due
+    else:
+        print("Invalid payment method. Please try again.")
+        return handle_payment(total_due)

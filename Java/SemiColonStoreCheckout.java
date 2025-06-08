@@ -87,6 +87,19 @@ public static void main(String[] args) {
 
 		 double amountPaid = handlePayment(scanner, totalDue);
 
+		 printHeader();
+        System.out.println("RECEIPT - SEMICOLON STORES");
+        System.out.println("Customer: " + customerName);
+        System.out.println("Cashier: " + cashierName);
+        System.out.println("--------------------------------------");
+        System.out.printf("%-15s %5s %10s %12s%n", "Product", "Qty", "Unit Price", "Total Price");
+        System.out.println("--------------------------------------");
+
+        for (int i = 0; i < productNames.size(); i++) {
+            double lineTotal = quantities.get(i) * unitPrices.get(i);
+            System.out.printf("%-15s %5d %10.2f %12.2f%n", productNames.get(i), quantities.get(i), unitPrices.get(i), lineTotal);
+        }
+
 
 
 

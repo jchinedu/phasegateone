@@ -78,3 +78,9 @@ def main():
     total_after_discount = subtotal - discount_amount
     vat = total_after_discount * 0.075
     total_due = total_after_discount + vat
+    print_header()
+    print(f"Customer: {customer_name}")
+    print(f"Cashier: {cashier_name}")
+    print("=================================================")
+    print(f"{'ITEM':<15} {'QTY':>5} {'PRICE':>10} {'TOTAL(NGN)':>12}")
+    print("-------------------------------------------------")

@@ -84,3 +84,7 @@ def main():
     print("=================================================")
     print(f"{'ITEM':<15} {'QTY':>5} {'PRICE':>10} {'TOTAL(NGN)':>12}")
     print("-------------------------------------------------")
+    
+    for name, qty, price in zip(product_names, quantities, unit_prices):
+        line_total = qty * price
+        print(f"{name:<15} {qty:>5} {price:>10.2f} {line_total:>12.2f}")

@@ -13,15 +13,9 @@ public static void main(String[] args) {
         String customerName = scanner.nextLine();
 
 
-
-
-
-
-
-
-
-
-
+	ArrayList<String> productNames = new ArrayList<>();
+        ArrayList<Integer> quantities = new ArrayList<>();
+        ArrayList<Double> unitPrices = new ArrayList<>();
 
 
 

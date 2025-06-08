@@ -39,8 +39,20 @@ public static void main(String[] args) {
 		System.out.print("Enter cashier name: ");
         String cashierName = scanner.nextLine();
 
-}
+		System.out.print("Is there any discount for this customer? (yes/no): ");
+        String discountResponse = scanner.nextLine();
+        double discountPercent = 0.0;
+        if (discountResponse.equalsIgnoreCase("yes")) {
+            System.out.print("Enter discount percentage: ");
+            discountPercent = getValidDouble(scanner);
+            if (discountPercent < 0) discountPercent = 0;
+            if (discountPercent > 100) discountPercent = 100;
+        }
 
+		double subtotal = 0.0;
+        for (int i = 0; i < productNames.size(); i++) {
+            subtotal += quantities.get(i) * unitPrices.get(i);
+        }
 
 
 

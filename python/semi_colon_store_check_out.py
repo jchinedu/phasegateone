@@ -64,3 +64,12 @@ def main():
         product_names.append(product)
         unit_prices.append(price)
         quantities.append(qty)
+    cashier_name = input("Enter cashier name: ")
+    discount_response = input("Is there any discount for this customer? (yes/no): ").strip().lower()
+    discount_percent = 0.0
+    if discount_response == 'yes':
+        discount_percent = get_valid_float("Enter discount percentage: ")
+        if discount_percent < 0:
+            discount_percent = 0
+        elif discount_percent > 100:
+            discount_percent = 100

@@ -71,7 +71,21 @@ public static void main(String[] args) {
 
 
 
+		for (int i = 0; i < productNames.size(); i++) {
+            double lineTotal = quantities.get(i) * unitPrices.get(i);
+            System.out.printf("%-15s %5d %10.2f %12.2f%n", productNames.get(i), quantities.get(i), unitPrices.get(i), lineTotal);
+        }
+        System.out.println("--------------------------------------");
+        System.out.printf("Subtotal: %31.2f%n", subtotal);
+        System.out.printf("Discount (%.2f%%): %23.2f%n", discountPercent, discountAmount);
+        System.out.printf("VAT (7.5%%): %29.2f%n", vat);
+        System.out.println("--------------------------------------");
+        System.out.printf("TOTAL DUE: %27.2f%n", totalDue);
+        System.out.println();
+        System.out.println("THIS IS NOT A RECEIPT, KINDLY PAY THIS AMOUNT: " + String.format("%.2f", totalDue));
+        System.out.println();
 
+		 double amountPaid = handlePayment(scanner, totalDue);
 
 
 

@@ -99,6 +99,18 @@ public static void main(String[] args) {
             double lineTotal = quantities.get(i) * unitPrices.get(i);
             System.out.printf("%-15s %5d %10.2f %12.2f%n", productNames.get(i), quantities.get(i), unitPrices.get(i), lineTotal);
         }
+		 System.out.println("--------------------------------------");
+        System.out.printf("Subtotal: %31.2f%n", subtotal);
+        System.out.printf("Discount (%.2f%%): %23.2f%n", discountPercent, discountAmount);
+        System.out.printf("VAT (7.5%%): %29.2f%n", vat);
+        System.out.println("--------------------------------------");
+        System.out.printf("TOTAL PAID: %27.2f%n", amountPaid);
+        System.out.printf("CHANGE: %31.2f%n", amountPaid - totalDue);
+        System.out.println();
+        System.out.println("THANK YOU FOR SHOPPING WITH SEMICOLON STORES!");
+        System.out.println("Visit us again!");
+    }
+
 
 
 

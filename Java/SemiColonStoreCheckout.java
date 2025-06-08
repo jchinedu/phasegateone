@@ -109,6 +109,15 @@ public static void main(String[] args) {
         System.out.println();
         System.out.println("THANK YOU FOR SHOPPING WITH SEMICOLON STORES!");
         System.out.println("Visit us again!");
+	
+	}
+    
+	private static int getValidInt(Scanner scanner) {
+        while (!scanner.hasNextInt()) {
+            System.out.print("Invalid input. Enter a valid integer: ");
+            scanner.next();
+        }
+        return scanner.nextInt();
     }
 
 

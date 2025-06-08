@@ -126,7 +126,14 @@ public static void main(String[] args) {
         }
         return scanner.nextDouble();
     }
-	
+	private static void printHeader() {
+        System.out.println("======================================");
+        System.out.println("           SEMICOLON STORES            ");
+        System.out.println("        1234 Code Street, Tech City    ");
+        System.out.println("        Tel: +123 456 7890             ");
+        System.out.println("Date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+        System.out.println("======================================");
+    }
 
 
 

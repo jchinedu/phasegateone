@@ -62,15 +62,12 @@ public static void main(String[] args) {
 
 
 
-
-
-
-
-
-
-
-
-
+		printHeader();
+        System.out.println("Customer: " + customerName);
+        System.out.println("Cashier: " + cashierName);
+        System.out.println("--------------------------------------");
+        System.out.printf("%-15s %5s %10s %12s%n", "Product", "Qty", "Unit Price", "Total Price");
+        System.out.println("--------------------------------------");
 
 
 

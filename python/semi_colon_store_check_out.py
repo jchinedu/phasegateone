@@ -73,3 +73,8 @@ def main():
             discount_percent = 0
         elif discount_percent > 100:
             discount_percent = 100
+    subtotal = sum(q * p for q, p in zip(quantities, unit_prices))
+    discount_amount = subtotal * discount_percent / 100.0
+    total_after_discount = subtotal - discount_amount
+    vat = total_after_discount * 0.075
+    total_due = total_after_discount + vat

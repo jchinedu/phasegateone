@@ -18,6 +18,15 @@ public static void main(String[] args) {
         ArrayList<Double> unitPrices = new ArrayList<>();
 
 	while (true) {
+		System.out.print("Enter product name (or 'done' to finish): ");
+            String product = scanner.nextLine();
+            if (product.equalsIgnoreCase("done")) {
+                if (productNames.isEmpty()) {
+                    System.out.println("No products entered. Please enter at least one product.");
+                    continue;
+                }
+                break;
+            }
 
 
 

@@ -55,10 +55,10 @@ public static void main(String[] args) {
         }
 
 
-
-
-
-
+		double discountAmount = subtotal * discountPercent / 100.0;
+        double totalAfterDiscount = subtotal - discountAmount;
+        double vat = totalAfterDiscount * 0.075;
+        double totalDue = totalAfterDiscount + vat;
 
 
 

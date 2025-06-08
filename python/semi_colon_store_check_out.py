@@ -61,3 +61,6 @@ def main():
 
         price = get_valid_float("Enter unit price: ")
         qty = get_valid_int("Enter quantity purchased: ")
+        product_names.append(product)
+        unit_prices.append(price)
+        quantities.append(qty)

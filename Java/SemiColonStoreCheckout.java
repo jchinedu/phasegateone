@@ -119,6 +119,14 @@ public static void main(String[] args) {
         }
         return scanner.nextInt();
     }
+	private static double getValidDouble(Scanner scanner) {
+        while (!scanner.hasNextDouble()) {
+            System.out.print("Invalid input. Enter a valid number: ");
+            scanner.next();
+        }
+        return scanner.nextDouble();
+    }
+	
 
 
 

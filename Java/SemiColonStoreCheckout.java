@@ -29,6 +29,12 @@ public static void main(String[] args) {
             }
 	       System.out.print("Enter unit price: ");
             double price = getValidDouble(scanner);
+		System.out.print("Enter quantity purchased: ");
+		int qty = scanner.nextInt();
+
+		System.out.print("Enter unit price: ");
+		 price = scanner.nextDouble();
+
 
 
 		productNames.add(product);
@@ -142,21 +148,35 @@ public static void main(String[] args) {
         System.out.print("Enter your choice: ");
         int paymentChoice = getValidInt(scanner);
         scanner.nextLine();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	switch (paymentChoice) {
+            case 1:
+                System.out.print("Enter amount paid by customer: ");
+                double amountPaid = getValidDouble(scanner);
+                scanner.nextLine();
+                if (amountPaid < totalDue) {
+                    System.out.println("Insufficient payment. Please pay at least: " + String.format("%.2f", totalDue));
+                    return handlePayment(scanner, totalDue);
+                } else {
+                    double change = amountPaid - totalDue;
+                    System.out.println("Change to give back: " + String.format("%.2f", change));
+                    return amountPaid;
+                }
+            case 2:
+                System.out.print("Enter card number (simulate): ");
+                String cardNumber = scanner.nextLine();
+                System.out.println("Payment of " + String.format("%.2f", totalDue) + " processed via card ending with "
+                        + cardNumber.substring(Math.max(0, cardNumber.length() - 4)));
+                return totalDue;
+            case 3:
+                System.out.print("Enter mobile money reference: ");
+                String mmRef = scanner.nextLine();
+                System.out.println("Payment of " + String.format("%.2f", totalDue) + " processed with reference " + mmRef);
+                return totalDue;
+            default:
+                System.out.println("Invalid payment method. Please try again.");
+                return handlePayment(scanner, totalDue);
+        }
 }
 
 }

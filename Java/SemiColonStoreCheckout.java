@@ -31,7 +31,10 @@ public static void main(String[] args) {
             double price = getValidDouble(scanner);
 
 
-
+		productNames.add(product);
+            quantities.add(qty);
+            unitPrices.add(price);
+        }
 
 }
 

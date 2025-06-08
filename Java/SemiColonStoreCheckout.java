@@ -8,6 +8,10 @@ public class SemiColonStoreCheckout {
 public static void main(String[] args) {
 	Scanner scanner = new Scanner(System.in);
 	System.out.println("Welcome to SemiColon Stores Checkout System!");
+	
+	System.out.print("Enter customer name: ");
+        String customerName = scanner.nextLine();
+
 
 
 

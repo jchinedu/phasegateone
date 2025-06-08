@@ -53,4 +53,11 @@ def main():
 
     product_names = []
     quantities = []
-    unit_prices = []
+    unit_prices = [] 
+    while True:
+        product = input("Enter product name (or 'done' to finish): ")
+        if product.lower() == 'done':
+            break
+
+        price = get_valid_float("Enter unit price: ")
+        qty = get_valid_int("Enter quantity purchased: ")

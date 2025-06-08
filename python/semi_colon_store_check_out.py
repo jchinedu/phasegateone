@@ -109,3 +109,19 @@ def main():
     print("----------------------------------------------")
     print(f"{'ITEM':<15} {'QTY':>5} {'PRICE':>10} {'TOTAL':>12}")
     print("----------------------------------------------")
+    for name, qty, price in zip(product_names, quantities, unit_prices):
+        line_total = qty * price
+        print(f"{name:<15} {qty:>5} {price:>10.2f} {line_total:>12.2f}")
+
+    print("----------------------------------------------")
+    print(f"Subtotal: {subtotal:35.2f}")
+    print(f"Discount ({discount_percent:.2f}%): {discount_amount:27.2f}")
+    print(f"VAT @ 7.5%: {vat:33.2f}")
+    print("----------------------------------------------")
+    print(f"TOTAL PAID: {amount_paid:34.2f}")
+    print(f"CHANGE: {amount_paid - total_due:38.2f}")
+    print()
+    print("THANK YOU FOR SHOPPING WITH SEMICOLON STORES!")
+    print("Visit us again!")
+
+    main()

@@ -31,7 +31,7 @@ public static String cardType(String cardNumber){
 	}
 public static boolean check(String cardNumber){
 	int sum = 0;
-	boolean doubledigit = false;
+	boolean doubleDigit = false;
 	for(int i = cardNumber.length()-1; i>=0; i--){
 	int digit = cardNumber.charAt(i) - '0';
 
@@ -47,12 +47,20 @@ public static boolean check(String cardNumber){
 public static void main(String[] args){
  Scanner input = new Scanner(System.in);
 System.out.print("Hello, kindly enter card details to verify: ");
-String cardNumber = Scanner.nextLine();
+String cardNumber = input.nextLine();
 
 System.out.println("credit card type: " + cardType(cardNumber));
 System.out.println("credit card number: " + cardNumber);
 System.out.println("credit card Digit Length: " + cardNumber.length());
-if(!
+if(!validLength(cardNumber)){
+	System.out.println("Credit Card Validity Status: Invalid");
+}else if(check(cardNumber)){
+	System.out.println("Credit Card Validity Status: Valid");
+} else {
+	System.out.println("Credit Card Validity Status: Invalid");
+}
+}
+}
 
 
 

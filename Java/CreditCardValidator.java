@@ -5,3 +5,4 @@ public static boolean validLength(String cardNumber){
 		return false;
 	}
 	for(char ch : cardNumber.toCharArray()){
+	 if(!Character.isDigit(ch)) {

@@ -8,7 +8,7 @@ public class SemiColonStoreCheckout {
 public static void main(String[] args) {
 	Scanner scanner = new Scanner(System.in);
 	System.out.println("Welcome to SemiColon Stores Checkout System!");
-	
+
 	System.out.print("Enter customer name: ");
         String customerName = scanner.nextLine();
 
@@ -117,7 +117,7 @@ public static void main(String[] args) {
         System.out.printf("VAT @ 7.5%%: %33.2f%n", vat);
         System.out.println("----------------------------------------------");
         System.out.printf("TOTAL PAID: %34.2f%n", amountPaid);
-        System.out.printf("CHANGE: %38 .2f%n", amountPaid - totalDue);
+        System.out.printf("CHANGE: %38.2f%n", amountPaid - totalDue);
         System.out.println();
         System.out.println("THANK YOU FOR SHOPPING WITH SEMICOLON STORES!");
         System.out.println("Visit us again!");
@@ -146,7 +146,7 @@ public static void main(String[] args) {
         System.out.println("Tel: +123 456 7890             ");
         System.out.println("Date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
            }
-	public static double handlePayment(Scanner scanner, double totalDue) {
+	public  static double handlePayment(Scanner scanner, double totalDue) {
         System.out.println("Select payment method:");
         System.out.println("1. Cash");
         System.out.println("2. Card");

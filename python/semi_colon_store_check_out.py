@@ -123,5 +123,4 @@ def main():
     print()
     print("THANK YOU FOR SHOPPING WITH SEMICOLON STORES!")
     print("Visit us again!")
-
-    main()
+main()

@@ -6,6 +6,8 @@ def is_valid_date(day, month, year):
         return True
     except ValueError:
         return False
+def supported_year(year):
+    return year < 2026
 def add_days(day, month, year, days_to_add):
     date = datetime(year, month, day) + timedelta(days=days_to_add)
     return date.day, date.month, date.year
@@ -35,10 +37,17 @@ def print_safe_period(start_day, start_month, start_year):
 def main():
     name = input("What is your name? ")
     print("Please enter the first day of your last menstrual cycle.")
-    day = int(input("Day (1-31): "))
-    month = int(input("Month (1-12): "))
-    year = int(input("Year (e.g., 2025): "))
-
+    
+    try:
+    	day = int(input("Day (1-31): "))
+    	month = int(input("Month (1-12): "))
+    	year = int(input("Year (e.g., 2025): "))
+    except ValueError:
+        print("Please enter numeric values for day, month, and year.")
+        return
+    if not supported_year(year):
+        print("This app does not support dates from the year 2026 and above.")
+        return
     if not is_valid_date(day, month, year):
         print("Invalid date entered. Please enter a valid date.")
         return
@@ -52,4 +61,4 @@ def main():
 main()
 
 
-# i was able to calculate for 2026, invalid year 
+# i was able to calculate for 2026, invalid year, noted and done. 

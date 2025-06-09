@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class CreditCardValidator{
 
 public static boolean validLength(String cardNumber){
@@ -43,3 +44,5 @@ public static boolean check(String cardNumber){
 	}
 	return (sum % 10) == 0;
 	}
+public static void main(String[] args){
+ Scanner input = new Scanner(System.in);

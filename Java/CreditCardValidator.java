@@ -9,3 +9,5 @@ public static boolean validLength(String cardNumber){
 		return false;
 	}
 	}
+	return true;
+}

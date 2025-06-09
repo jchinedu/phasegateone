@@ -38,3 +38,8 @@ public static boolean check(String cardNumber){
 	   digit *= 2;
 	if(digit > 9) digit -= 9;
 	}
+	sum += digit;
+	doubleDigit = !doubleDigit;
+	}
+	return (sum % 10) == 0;
+	}

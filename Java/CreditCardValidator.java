@@ -13,5 +13,11 @@ public static boolean validLength(String cardNumber){
 }
 public static String cardType(String cardNumber){
 	if(cardNumber.startsWith("4")){
-	return "VISA"
+	return "VISA";
+	}
+	else if(cardNumber.startsWith("5")){
+	return "MasterCard";
+	}
+	else if(cardNumber.startsWith("37")){
+	return "American Express";
 	}

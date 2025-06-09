@@ -46,3 +46,15 @@ public static boolean check(String cardNumber){
 	}
 public static void main(String[] args){
  Scanner input = new Scanner(System.in);
+System.out.print("Hello, kindly enter card details to verify: ");
+String cardNumber = Scanner.nextLine();
+
+System.out.println("credit card type: " + cardType(cardNumber));
+System.out.println("credit card number: " + cardNumber);
+System.out.println("credit card Digit Length: " + cardNumber.length());
+if(!
+
+
+
+
+

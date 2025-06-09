@@ -28,3 +28,13 @@ public static String cardType(String cardNumber){
 	return "Invalid";
 	}
 	}
+public static boolean check(String cardNumber){
+	int sum = 0;
+	boolean doubledigit = false;
+	for(int i = cardNumber.length()-1; i>=0; i--){
+	int digit = cardNumber.charAt(i) - '0';
+
+	if(doubleDigit) {
+	   digit *= 2;
+	if(digit > 9) digit -= 9;
+	}

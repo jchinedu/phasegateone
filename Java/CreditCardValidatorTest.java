@@ -14,4 +14,8 @@ public class CreditCardValidatorTest {
     public void cardType() {
         assertEquals("VISA", CreditCardValidator.cardType("4539876543210124"));
 }
+@Test
+    public void Check() {
+        assertFalse(CreditCardValidator.check("4539876543210124")); 
+}
 }

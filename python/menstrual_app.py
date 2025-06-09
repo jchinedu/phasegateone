@@ -52,3 +52,4 @@ def main():
 main()
 
 
+# i was able to calculate for 2026, invalid year 

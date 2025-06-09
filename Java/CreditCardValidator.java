@@ -21,3 +21,6 @@ public static String cardType(String cardNumber){
 	else if(cardNumber.startsWith("37")){
 	return "American Express";
 	}
+	else if(cardNumber.startsWith("6")){
+	return "Discover";
+	}

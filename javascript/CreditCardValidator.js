@@ -25,3 +25,18 @@ function CardType(cardNumber) {
     return "invalid";
   }
 }
+function check(cardNumber) {
+  let total = 0;
+  let shouldDouble = false;
+
+  for (let i = cardNumber.length - 1; i >= 0; i--) {
+    let digit = parseInt(cardNumber[i]);
+    if (shouldDouble) {
+      digit *= 2;
+    }
+    total += digit;
+    shouldDouble = !shouldDouble;
+  }
+
+  return total % 10 === 0;
+}

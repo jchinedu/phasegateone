@@ -13,3 +13,4 @@ def card_type(card_number):
 	elif card_number.startswith("37"):
 		return "American Express"
 	elif card_number.startswith("6"):
+		return "Discover"

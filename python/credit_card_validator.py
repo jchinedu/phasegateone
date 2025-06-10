@@ -8,3 +8,4 @@ def valid_length(card_number):
 def card_type(card_number):
 	if card_number.startswith("4"):
 		return "VISA"
+	elif card_number.startswith("5"):

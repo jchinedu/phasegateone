@@ -12,3 +12,16 @@ for (let i = 0; i < cardNumber.length; i++) {
   }
   return true;
 }
+function CardType(cardNumber) {
+  if (cardNumber.startsWith('4')) {
+    return "VISA";
+  } else if (cardNumber.startsWith('5')) {
+    return "MasterCard";
+  } else if (cardNumber.startsWith('37')) {
+    return "American Express";
+  } else if (cardNumber.startsWith('6')) {
+    return "Discover";
+  } else {
+    return "invalid";
+  }
+}

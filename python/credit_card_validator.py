@@ -27,3 +27,4 @@ def check(card_number):
 		double_digit = not double_digit
 	return total % 10 == 0
 def main():
+	card_number = input("Hello, kindly enter card details to verify: ")

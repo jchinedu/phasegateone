@@ -23,3 +23,4 @@ def check(card_number):
 		digit = int(card_number[i])
 		if double_digit:
 			digit *= 2
+		total += digit

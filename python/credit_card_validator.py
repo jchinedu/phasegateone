@@ -29,3 +29,4 @@ def check(card_number):
 def main():
 	card_number = input("Hello, kindly enter card details to verify: ")
 	print("Credit card type:", card_type(card_number))
+	print("Credit card number:", card_number)

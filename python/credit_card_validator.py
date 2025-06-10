@@ -31,3 +31,4 @@ def main():
 	print("Credit card type:", card_type(card_number))
 	print("Credit card number:", card_number)
 	print("Credit card Digit Length:", len(card_number))
+	if not valid_length(card_number):

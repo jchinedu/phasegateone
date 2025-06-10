@@ -18,3 +18,4 @@ def card_type(card_number):
 		return "Invalid"
 def check(card_number):
 	total = 0
+	double_digit = False

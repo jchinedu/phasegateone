@@ -15,3 +15,4 @@ def card_type(card_number):
 	elif card_number.startswith("6"):
 		return "Discover"
 	else:
+		return "Invalid"

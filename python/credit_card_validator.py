@@ -28,3 +28,4 @@ def check(card_number):
 	return total % 10 == 0
 def main():
 	card_number = input("Hello, kindly enter card details to verify: ")
+	print("Credit card type:", card_type(card_number))

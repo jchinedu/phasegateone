@@ -34,3 +34,4 @@ def main():
 	if not valid_length(card_number):
 		print("Credit Card Validity Status: Invalid")
 	elif check(card_number):
+		print("Credit Card Validity Status: Valid")

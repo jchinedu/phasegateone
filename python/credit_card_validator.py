@@ -4,3 +4,4 @@ def valid_length(card_number):
 	for ch in card_number:
 		if not ch.isdigit():
 			return False
+	return True

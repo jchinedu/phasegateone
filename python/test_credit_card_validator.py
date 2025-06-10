@@ -12,6 +12,6 @@ class TestCreditCardValidator(unittest.TestCase):
        		self.assertEqual(card_type("6011111111111111"), "Discover")
         	self.assertEqual(card_type("8011111111111111"), "Invalid")
 	def test_check_valid(self):
-        	self.assertTrue(check("4539682995824395"))
+        	self.assertTrue(check("4111111111111111"))
 	def test_check_invalid(self):
-        self.assertFalse(check("4539682995824396"))
+        	self.assertFalse(check("4539682995824396"))

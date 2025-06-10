@@ -16,3 +16,4 @@ def card_type(card_number):
 		return "Discover"
 	else:
 		return "Invalid"
+def check(card_number):

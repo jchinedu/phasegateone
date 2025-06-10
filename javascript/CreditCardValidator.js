@@ -50,8 +50,11 @@ function check(cardNumber) {
   return total % 10 === 0;
 }
 
-const cardNumber = Nprompt("Hello, kindly enter card details to verify: ");
+do {
+  cardNumber = prompt("Please enter your credit card number: ");
+} while (!AllDigits(cardNumber));
 
+console.log("Thanks! You entered:", cardNumber);
 console.log(`\nCard Number: ${cardNumber}`);
 console.log(`Card Type: ${CardType(cardNumber)}`);
 console.log(`Number of Digits: ${cardNumber.length}`);

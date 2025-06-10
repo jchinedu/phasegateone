@@ -40,3 +40,9 @@ function check(cardNumber) {
 
   return total % 10 === 0;
 }
+
+const cardNumber = prompt("Hello! Please enter your credit card number: ");
+
+console.log(`\nCard Number: ${cardNumber}`);
+console.log(`Card Type: ${CardType(cardNumber)}`);
+console.log(`Number of Digits: ${cardNumber.length}`);

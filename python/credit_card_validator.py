@@ -7,3 +7,4 @@ def valid_length(card_number):
 	return True
 def card_type(card_number):
 	if card_number.startswith("4"):
+		return "VISA"

@@ -37,3 +37,4 @@ def main():
 		print("Credit Card Validity Status: Valid")
 	else:
 		print("Credit Card Validity Status: Invalid")
+main()

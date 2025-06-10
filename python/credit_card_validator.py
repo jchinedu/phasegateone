@@ -22,3 +22,4 @@ def check(card_number):
 	for i in range(len(card_number) - 1, -1, -1):
 		digit = int(card_number[i])
 		if double_digit:
+			digit *= 2

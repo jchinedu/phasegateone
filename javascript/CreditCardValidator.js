@@ -1,5 +1,14 @@
 const prompt = require('prompt-sync')();
 
+function AllDigits(number) {
+  for (let i = 0; i < number.length; i++) {
+    if (number[i] < '0' || number[i] > '9') {
+      return false;
+    }
+  }
+  return true;
+}
+
 function ValidLength(cardNumber) {
   if (cardNumber.length !== 16) {
     return false;
@@ -41,8 +50,15 @@ function check(cardNumber) {
   return total % 10 === 0;
 }
 
-const cardNumber = prompt("Hello! Please enter your credit card number: ");
+const cardNumber = Nprompt("Hello, kindly enter card details to verify: ");
 
 console.log(`\nCard Number: ${cardNumber}`);
 console.log(`Card Type: ${CardType(cardNumber)}`);
 console.log(`Number of Digits: ${cardNumber.length}`);
+if (!ValidLength(cardNumber)) {
+  console.log("Status: Invalid");
+} else if (check(cardNumber)) {
+  console.log("Status: Valid ");
+} else {
+  console.log("Status: Invalid");
+}

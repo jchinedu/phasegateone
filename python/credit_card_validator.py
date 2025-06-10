@@ -17,3 +17,4 @@ def card_type(card_number):
 	else:
 		return "Invalid"
 def check(card_number):
+	total = 0

@@ -24,3 +24,4 @@ def check(card_number):
 		if double_digit:
 			digit *= 2
 		total += digit
+		double_digit = not double_digit

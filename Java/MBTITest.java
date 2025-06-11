@@ -42,6 +42,21 @@ public class MBTITest{
             }
             updateTraitCount(answer, i, counts);
         }
+	return determineMBTIType(counts);
+    }
+	private static void updateTraitCount(char answer, int questionIndex, int[] counts) {
+        char trait = (answer == 'A') ? traitForA[questionIndex] : traitForB[questionIndex];
+        switch (trait) {
+            case 'E' -> counts[0]++;
+            case 'I' -> counts[1]++;
+            case 'S' -> counts[2]++;
+            case 'N' -> counts[3]++;
+            case 'T' -> counts[4]++;
+            case 'F' -> counts[5]++;
+            case 'J' -> counts[6]++;
+            case 'P' -> counts[7]++;
+        }
+    }
 
 
 

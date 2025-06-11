@@ -30,6 +30,8 @@ public class MBTITest{
         'I', 'N', 'F', 'P', 'I', 'N', 'F', 'P', 'I', 'N',
         'F', 'P', 'I', 'N', 'F', 'P', 'I', 'N', 'F', 'P'
     };
+	public static String processAnswers(String answers) {
+        if (answers.length() != questions.length) {
 
 
 

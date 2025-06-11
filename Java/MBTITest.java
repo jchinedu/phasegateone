@@ -23,6 +23,9 @@ public class MBTITest{
 	{"Control, govern", "Latitude, freedom"}
     };
 	static char[] traitForA = {
+		'E', 'S', 'T', 'J', 'E', 'S', 'T', 'J', 'E', 'S',
+		'T', 'J', 'E', 'S', 'T', 'J', 'E', 'S', 'T', 'J'
+    };
 
 
 

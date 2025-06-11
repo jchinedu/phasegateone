@@ -9,3 +9,6 @@ public class MBTITestFlow {
    while (true) {
             System.out.println("\nType 'start' to take the test or 'exit' to quit:");
             String input = scanner.nextLine().trim().toLowerCase();
+	   if (input.equals("start")) {
+                String gender = promptGender();
+                if (gender == null) continue;  

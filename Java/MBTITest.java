@@ -10,6 +10,8 @@ public class MBTITest{
 	        {"Candid, straightforward, frank", "Tactful, kind, encouraging"},
 	        {"Plan, schedule", "Unplanned, spontaneous"},
 	        {"Seek many tasks, public activities", "Seek private, solitary activities"},
+	        {"Standard, usual, convention", "Different, novel, unique"},
+
 
 
 

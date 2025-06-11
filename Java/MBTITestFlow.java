@@ -57,3 +57,12 @@ public class MBTITestFlow {
             return null;
         }
     }
+	static void showPersonalityTraitsInfo() {
+        System.out.println("\nPersonality traits describe how you typically think, feel, and behave.");
+        System.out.println("The MBTI test sorts you into one of 16 personality types based on 4 dichotomies:");
+        System.out.println("- Extraversion (E) vs Introversion (I)");
+        System.out.println("- Sensing (S) vs Intuition (N)");
+        System.out.println("- Thinking (T) vs Feeling (F)");
+        System.out.println("- Judging (J) vs Perceiving (P)");
+        System.out.println("This helps you understand yourself better and improve your relationships, career, and life choices.");
+    }

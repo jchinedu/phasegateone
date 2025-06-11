@@ -18,6 +18,8 @@ public class MBTITest{
 	        {"Tough-minded, just", "Tender-hearted, merciful"},
 	        {"Preparation, plan ahead", "Go with the flow, adapt as you go"},
 	        {"Active, initiate", "Reflective, deliberate"},
+	        {"Facts, things, what is", "Ideas, dreams, what could be, philosophical"},
+
 
 
 

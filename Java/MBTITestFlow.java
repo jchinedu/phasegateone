@@ -17,3 +17,4 @@ public class MBTITestFlow {
                     System.out.println("1 - Take the test");
                     System.out.println("2 - Learn about personality traits");
                     System.out.println("0 - Go back");  
+	 String choice = scanner.nextLine().trim();

@@ -22,6 +22,7 @@ public class MBTITest{
 	        {"Matter of fact, issue-oriented", "Sensitive, people-oriented, compassionate"},
 	{"Control, govern", "Latitude, freedom"}
     };
+	static char[] traitForA = {
 
 
 

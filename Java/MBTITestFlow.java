@@ -18,3 +18,16 @@ public class MBTITestFlow {
                     System.out.println("2 - Learn about personality traits");
                     System.out.println("0 - Go back");  
 	 String choice = scanner.nextLine().trim();
+
+		switch (choice) {
+                        case "1" -> {
+                            System.out.println("\nGreat! Starting the test...");
+                            runMBTITest();
+                            return;                         }
+                        case "2" -> showPersonalityTraitsInfo();
+                        case "0" -> {
+                            System.out.println("Going back to main menu...");
+                            break; 
+                        }
+                        default -> System.out.println("Invalid choice, try again.");
+                    }

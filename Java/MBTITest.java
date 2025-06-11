@@ -32,6 +32,8 @@ public class MBTITest{
     };
 	public static String processAnswers(String answers) {
         if (answers.length() != questions.length) {
+	throw new IllegalArgumentException("Answers length must be " + questions.length);
+        }
 
 
 

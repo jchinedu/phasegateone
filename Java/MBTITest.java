@@ -85,6 +85,7 @@ public class MBTITest{
             default -> System.out.println("No description available for this personality type.");
         }
     }
+}
 
 
 

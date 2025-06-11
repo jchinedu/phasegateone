@@ -66,3 +66,38 @@ public class MBTITestFlow {
         System.out.println("- Judging (J) vs Perceiving (P)");
         System.out.println("This helps you understand yourself better and improve your relationships, career, and life choices.");
     }
+	static void runMBTITest() {
+        StringBuilder answers = new StringBuilder();
+
+  
+        for (int i = 0; i < MBTITestNoScanner.questions.length; i++) {
+            String[] q = MBTITestNoScanner.questions[i];
+            System.out.println("\nQuestion " + (i + 1) + ":");
+            System.out.println("A. " + q[0]);
+            System.out.println("B. " + q[1]);
+            String answer;
+            while (true) {
+                System.out.print("Choose A or B: ");
+                answer = scanner.nextLine().trim().toUpperCase();
+                if (answer.equals("A") || answer.equals("B")) {
+                    answers.append(answer);
+                    break;
+                } else {
+                    System.out.println("Invalid input. Please enter 'A' or 'B'.");
+                }
+            }
+        }
+        try {
+            String personalityType = MBTITestNoScanner.processAnswers(answers.toString());
+            System.out.println("\nYour MBTI personality type is: " + personalityType);
+            MBTITestNoScanner.displayPersonalityDescription(personalityType);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error processing test: " + e.getMessage());
+        }
+    }
+
+    static String capitalize(String s) {
+        if (s == null || s.isEmpty()) return s;
+        return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
+    }
+}

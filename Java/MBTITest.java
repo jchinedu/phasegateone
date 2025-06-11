@@ -34,7 +34,14 @@ public class MBTITest{
         if (answers.length() != questions.length) {
 	throw new IllegalArgumentException("Answers length must be " + questions.length);
         }
-
+	int[] counts = new int[8];
+	for (int i = 0; i < questions.length; i++) {
+            char answer = Character.toUpperCase(answers.charAt(i));
+            if (answer != 'A' && answer != 'B') {
+                throw new IllegalArgumentException("Invalid answer at position " + (i+1) + ". Only A or B allowed.");
+            }
+            updateTraitCount(answer, i, counts);
+        }
 
 
 

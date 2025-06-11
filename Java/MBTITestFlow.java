@@ -70,7 +70,7 @@ public class MBTITestFlow {
         StringBuilder answers = new StringBuilder();
 
   
-        for (int i = 0; i < MBTITestNoScanner.questions.length; i++) {
+        for (int i = 0; i < MBTITest.questions.length; i++) {
             String[] q = MBTITestNoScanner.questions[i];
             System.out.println("\nQuestion " + (i + 1) + ":");
             System.out.println("A. " + q[0]);

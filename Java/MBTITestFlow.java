@@ -42,8 +42,8 @@ public class MBTITestFlow {
         }
     }
 		static void showWelcomeMessage() {
-        System.out.println("“It’s so incredible to finally be understood.”");
-        System.out.println("Only 10 minutes to get a “freakishly accurate” description of who you are and why you do things the way you do.");
+        System.out.println("Its so incredible to finally be understood, ");
+        System.out.println("Only 10 minutes to get a freakishly accurate description of who you are and why you do things the way you do.");
     }
 
     static String promptGender() {
@@ -71,7 +71,7 @@ public class MBTITestFlow {
 
   
         for (int i = 0; i < MBTITest.questions.length; i++) {
-            String[] q = MBTITestNoScanner.questions[i];
+            String[] q = MBTITest.questions[i];
             System.out.println("\nQuestion " + (i + 1) + ":");
             System.out.println("A. " + q[0]);
             System.out.println("B. " + q[1]);
@@ -88,9 +88,9 @@ public class MBTITestFlow {
             }
         }
         try {
-            String personalityType = MBTITestNoScanner.processAnswers(answers.toString());
+            String personalityType = MBTITest.processAnswers(answers.toString());
             System.out.println("\nYour MBTI personality type is: " + personalityType);
-            MBTITestNoScanner.displayPersonalityDescription(personalityType);
+            MBTITest.displayPersonalityDescription(personalityType);
         } catch (IllegalArgumentException e) {
             System.out.println("Error processing test: " + e.getMessage());
         }

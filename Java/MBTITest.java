@@ -64,6 +64,18 @@ public class MBTITest{
         char fourth = counts[6] >= counts[7] ? 'J' : 'P';
         return "" + first + second + third + fourth;
     }
+	public static void displayPersonalityDescription(String type) {
+        switch (type) {
+            case "INTJ" -> System.out.println("The Architect: Strategic and imaginative thinkers.");
+            case "INTP" -> System.out.println("The Thinker: Innovative and curious.");
+            case "ENTJ" -> System.out.println("The Commander: Bold, imaginative leaders.");
+            case "ENTP" -> System.out.println("The Debater: Clever and intellectual.");
+            case "INFJ" -> System.out.println("The Advocate: Quiet, insightful idealists.");
+            case "INFP" -> System.out.println("The Mediator: Gentle, empathetic dreamers.");
+            case "ENFJ" -> System.out.println("The Protagonist: Charismatic and inspiring.");
+            case "ENFP" -> System.out.println("The Campaigner: Energetic, free-spirited.");
+            case "ISTJ" -> System.out.println("The Logistician: Responsible and honest.");
+            case "ISFJ" -> System.out.println("The Defender: Protective and warm.");
 
 
 

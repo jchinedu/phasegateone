@@ -31,3 +31,29 @@ public class MBTITestFlow {
                         }
                         default -> System.out.println("Invalid choice, try again.");
                     }
+		if (choice.equals("0")) break;
+                }
+            } else if (input.equals("exit")) {
+                System.out.println("Thanks for stopping by. Goodbye!");
+                break;
+            } else {
+                System.out.println("Invalid command. Please type 'start' or 'exit'.");
+            }
+        }
+    }
+		static void showWelcomeMessage() {
+        System.out.println("“It’s so incredible to finally be understood.”");
+        System.out.println("Only 10 minutes to get a “freakishly accurate” description of who you are and why you do things the way you do.");
+    }
+
+    static String promptGender() {
+        System.out.println("\nPlease select your gender (Male/Female):");
+        String genderInput = scanner.nextLine().trim().toLowerCase();
+        if (genderInput.equals("male") || genderInput.equals("female")) {
+            System.out.println("You selected: " + capitalize(genderInput));
+            return genderInput;
+        } else {
+            System.out.println("Invalid input. Please type 'Male' or 'Female'.");
+            return null;
+        }
+    }

@@ -15,6 +15,8 @@ public class MBTITest{
 	        {"Regulated, structured", "Easy-going, live and let live"},
 	        {"External, communicative, express yourself", "Internal, reticent, keep to yourself"},
 	        {"Focus on here-and-now", "Look to the future, big picture"},
+	        {"Tough-minded, just", "Tender-hearted, merciful"},
+
 
 
 

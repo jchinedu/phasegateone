@@ -11,4 +11,9 @@ public class MBTITestFlow {
             String input = scanner.nextLine().trim().toLowerCase();
 	   if (input.equals("start")) {
                 String gender = promptGender();
-                if (gender == null) continue;  
+                if (gender == null) continue;
+	while (true) {
+                    System.out.println("\nChoose an option:");
+                    System.out.println("1 - Take the test");
+                    System.out.println("2 - Learn about personality traits");
+                    System.out.println("0 - Go back");  

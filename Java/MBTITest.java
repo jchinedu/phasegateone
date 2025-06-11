@@ -57,6 +57,14 @@ public class MBTITest{
             case 'P' -> counts[7]++;
         }
     }
+	private static String determineMBTIType(int[] counts) {
+        char first = counts[0] >= counts[1] ? 'E' : 'I';
+        char second = counts[2] >= counts[3] ? 'S' : 'N';
+        char third = counts[4] >= counts[5] ? 'T' : 'F';
+        char fourth = counts[6] >= counts[7] ? 'J' : 'P';
+        return "" + first + second + third + fourth;
+    }
+
 
 
 

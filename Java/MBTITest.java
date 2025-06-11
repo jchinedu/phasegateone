@@ -11,6 +11,8 @@ public class MBTITest{
 	        {"Plan, schedule", "Unplanned, spontaneous"},
 	        {"Seek many tasks, public activities", "Seek private, solitary activities"},
 	        {"Standard, usual, convention", "Different, novel, unique"},
+	        {"Firm, tend to criticize, hold the line", "Gentle, tend to appreciate, conciliate"},
+
 
 
 

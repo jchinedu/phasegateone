@@ -76,7 +76,7 @@ public class MBTITest{
             case "ENFP" -> System.out.println("The Campaigner: Energetic, free-spirited.");
             case "ISTJ" -> System.out.println("The Logistician: Responsible and honest.");
             case "ISFJ" -> System.out.println("The Defender: Protective and warm.");
-	 case "ESTJ" -> System.out.println("The Executive: Organized and confident.");
+	    case "ESTJ" -> System.out.println("The Executive: Organized and confident.");
             case "ESFJ" -> System.out.println("The Consul: Caring and social.");
             case "ISTP" -> System.out.println("The Virtuoso: Bold and efficient.");
             case "ISFP" -> System.out.println("The Adventurer: Creative and spontaneous.");

@@ -26,6 +26,10 @@ public class MBTITest{
 		'E', 'S', 'T', 'J', 'E', 'S', 'T', 'J', 'E', 'S',
 		'T', 'J', 'E', 'S', 'T', 'J', 'E', 'S', 'T', 'J'
     };
+	static char[] traitForB = {
+        'I', 'N', 'F', 'P', 'I', 'N', 'F', 'P', 'I', 'N',
+        'F', 'P', 'I', 'N', 'F', 'P', 'I', 'N', 'F', 'P'
+    };
 
 
 

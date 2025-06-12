@@ -133,3 +133,16 @@ def get_description(personality_type):
         return describe_ESFP()
     else:
         return describe_default()
+def main():
+    print("Welcome to the MBTI Test Simulator!")
+    print("You will be shown 20 questions. Please enter A or B for each.\n")
+    answers = ""
+    try:
+        personality = process_answers(answers)
+        print("Your MBTI personality type is:", personality)
+        print(get_description(personality))
+    except ValueError as e:
+        print("Error:", e)
+
+main()
+

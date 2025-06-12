@@ -98,3 +98,38 @@ def describe_ESFP():
 
 def describe_default():
     return "No description available."
+def get_description(personality_type):
+    if personality_type == "INTJ":
+        return describe_INTJ()
+    elif personality_type == "INTP":
+        return describe_INTP()
+    elif personality_type == "ENTJ":
+        return describe_ENTJ()
+    elif personality_type == "ENTP":
+        return describe_ENTP()
+    elif personality_type == "INFJ":
+        return describe_INFJ()
+    elif personality_type == "INFP":
+        return describe_INFP()
+    elif personality_type == "ENFJ":
+        return describe_ENFJ()
+    elif personality_type == "ENFP":
+        return describe_ENFP()
+    elif personality_type == "ISTJ":
+        return describe_ISTJ()
+    elif personality_type == "ISFJ":
+        return describe_ISFJ()
+    elif personality_type == "ESTJ":
+        return describe_ESTJ()
+    elif personality_type == "ESFJ":
+        return describe_ESFJ()
+    elif personality_type == "ISTP":
+        return describe_ISTP()
+    elif personality_type == "ISFP":
+        return describe_ISFP()
+    elif personality_type == "ESTP":
+        return describe_ESTP()
+    elif personality_type == "ESFP":
+        return describe_ESFP()
+    else:
+        return describe_default()

@@ -20,3 +20,5 @@ QUESTIONS = [
 	("Matter of fact, issue-oriented", "Sensitive, people-oriented, compassionate"),
 	("Control, govern", "Latitude, freedom")
 ]
+
+TRAITS = [

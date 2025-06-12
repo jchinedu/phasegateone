@@ -15,3 +15,4 @@ QUESTIONS = [
 	("Focus on here-and-now", "Look to the future, big picture"),
 	("Tough-minded, just", "Tender-hearted, merciful"),
 	("Preparation, plan ahead", "Go with the flow, adapt as you go"),
+	("Active, initiate", "Reflective, deliberate"),

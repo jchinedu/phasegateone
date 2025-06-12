@@ -41,4 +41,10 @@ def process_answers(answers):
 
         trait = TRAITS[i][0] if ch == 'A' else TRAITS[i][1]
         counts[trait] += 1
+    result = ""
+    result += 'E' if counts['E'] >= counts['I'] else 'I'
+    result += 'S' if counts['S'] >= counts['N'] else 'N'
+    result += 'T' if counts['T'] >= counts['F'] else 'F'
+    result += 'J' if counts['J'] >= counts['P'] else 'P'
 
+    return result

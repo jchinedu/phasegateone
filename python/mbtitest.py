@@ -28,3 +28,7 @@ TRAITS = [
         ('E', 'I'), ('S', 'N'), ('T', 'F'), ('J', 'P'),
         ('E', 'I'), ('S', 'N'), ('T', 'F'), ('J', 'P')
 ]
+
+def process_answers(answers):
+        if len(answers) != len(QUESTIONS):
+        	raise ValueError("Answers must be exactly 20 characters long.")

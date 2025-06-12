@@ -137,6 +137,18 @@ def main():
     print("Welcome to the MBTI Test Simulator!")
     print("You will be shown 20 questions. Please enter A or B for each.\n")
     answers = ""
+    for i, (a_option, b_option) in enumerate(QUESTIONS):
+        while True:
+            print(f"Q{i+1}:")
+            print(f"A: {a_option}")
+            print(f"B: {b_option}")
+            user_input = input("Your answer (A/B): ").strip().upper()
+            if user_input in ("A", "B"):
+                answers += user_input
+                print()
+                break
+            else:
+                print("Invalid input. Please enter 'A' or 'B'.\n")
     try:
         personality = process_answers(answers)
         print("Your MBTI personality type is:", personality)

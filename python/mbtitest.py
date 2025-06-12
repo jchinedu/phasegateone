@@ -48,3 +48,53 @@ def process_answers(answers):
     result += 'J' if counts['J'] >= counts['P'] else 'P'
 
     return result
+def describe_INTJ():
+    return "The Architect: Strategic and imaginative thinkers."
+
+def describe_INTP():
+    return "The Thinker: Innovative and curious."
+
+def describe_ENTJ():
+    return "The Commander: Bold, imaginative leaders."
+
+def describe_ENTP():
+    return "The Debater: Clever and intellectual."
+
+def describe_INFJ():
+    return "The Advocate: Quiet, insightful idealists."
+
+def describe_INFP():
+    return "The Mediator: Gentle, empathetic dreamers."
+
+def describe_ENFJ():
+    return "The Protagonist: Charismatic and inspiring."
+
+def describe_ENFP():
+    return "The Campaigner: Energetic, free-spirited."
+
+def describe_ISTJ():
+    return "The Logistician: Responsible and honest."
+
+def describe_ISFJ():
+    return "The Defender: Protective and warm."
+
+def describe_ESTJ():
+    return "The Executive: Organized and confident."
+
+def describe_ESFJ():
+    return "The Consul: Caring and social."
+
+def describe_ISTP():
+    return "The Virtuoso: Bold and efficient."
+
+def describe_ISFP():
+    return "The Adventurer: Creative and spontaneous."
+
+def describe_ESTP():
+    return "The Entrepreneur: Energetic problem-solver."
+
+def describe_ESFP():
+    return "The Entertainer: Fun-loving and enthusiastic."
+
+def describe_default():
+    return "No description available."

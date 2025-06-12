@@ -45,25 +45,73 @@ public class MBTITest{
 	return determineMBTIType(counts);
     }
 	private static void updateTraitCount(char answer, int questionIndex, int[] counts) {
-        char trait = (answer == 'A') ? traitForA[questionIndex] : traitForB[questionIndex];
-        switch (trait) {
-            case 'E' -> counts[0]++;
-            case 'I' -> counts[1]++;
-            case 'S' -> counts[2]++;
-            case 'N' -> counts[3]++;
-            case 'T' -> counts[4]++;
-            case 'F' -> counts[5]++;
-            case 'J' -> counts[6]++;
-            case 'P' -> counts[7]++;
-        }
+    char trait;
+    if (answer == 'A') {
+        trait = traitForA[questionIndex];
+    } else {
+        trait = traitForB[questionIndex];
     }
+
+    switch (trait) {
+        case 'E':
+            counts[0]++;
+            break;
+        case 'I':
+            counts[1]++;
+            break;
+        case 'S':
+            counts[2]++;
+            break;
+        case 'N':
+            counts[3]++;
+            break;
+        case 'T':
+            counts[4]++;
+            break;
+        case 'F':
+            counts[5]++;
+            break;
+        case 'J':
+            counts[6]++;
+            break;
+        case 'P':
+            counts[7]++;
+            break;
+    }
+}
+
 	private static String determineMBTIType(int[] counts) {
-        char first = counts[0] >= counts[1] ? 'E' : 'I';
-        char second = counts[2] >= counts[3] ? 'S' : 'N';
-        char third = counts[4] >= counts[5] ? 'T' : 'F';
-        char fourth = counts[6] >= counts[7] ? 'J' : 'P';
-        return "" + first + second + third + fourth;
+    char first;
+    if (counts[0] >= counts[1]) {
+        first = 'E';
+    } else {
+        first = 'I';
     }
+
+    char second;
+    if (counts[2] >= counts[3]) {
+        second = 'S';
+    } else {
+        second = 'N';
+    }
+
+    char third;
+    if (counts[4] >= counts[5]) {
+        third = 'T';
+    } else {
+        third = 'F';
+    }
+
+    char fourth;
+    if (counts[6] >= counts[7]) {
+        fourth = 'J';
+    } else {
+        fourth = 'P';
+    }
+
+    return "" + first + second + third + fourth;
+}
+
 	public static void displayPersonalityDescription(String type) {
         switch (type) {
             case "INTJ" -> System.out.println("The Architect: Strategic and imaginative thinkers.");

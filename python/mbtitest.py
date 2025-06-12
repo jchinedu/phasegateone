@@ -18,3 +18,5 @@ QUESTIONS = [
 	("Active, initiate", "Reflective, deliberate"),
 	("Facts, things, what is", "Ideas, dreams, what could be, philosophical"),
 	("Matter of fact, issue-oriented", "Sensitive, people-oriented, compassionate"),
+	("Control, govern", "Latitude, freedom")
+]

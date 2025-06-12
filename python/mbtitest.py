@@ -33,4 +33,9 @@ def process_answers(answers):
         if len(answers) != len(QUESTIONS):
         	raise ValueError("Answers must be exactly 20 characters long.")
 	counts = {'E':0, 'I':0, 'S':0, 'N':0, 'T':0, 'F':0, 'J':0, 'P':0}
+	for i, ch in enumerate(answers.upper()):
+        	if ch not in ('A', 'B'):
+                	raise ValueError("Invalid answer at position {}: {}".format(i+1, ch))
+        trait = TRAITS[i][0] if ch == 'A' else TRAITS[i][1]
+        counts[trait] += 1
 

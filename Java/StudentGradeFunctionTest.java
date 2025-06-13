@@ -14,4 +14,12 @@ public class StudentGradeFunctionTest {
 
         assertArrayEquals(new int[]{240, 220, 285}, totals);
 }
+@Test
+    public void testCalculateAverages() {
+        int[] totals = {240, 220, 285};
+        double[] averages = new double[totals.length];
+        StudentGradefunction.calculateAverages(totals, averages, 3);
+
+        assertArrayEquals(new double[]{80.0, 73.33, 95.0}, averages, 0.01);
+    }
 }

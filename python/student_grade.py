@@ -34,3 +34,25 @@ def display_table(scores, totals, averages, positions):
 def subject_summary(scores, pass_mark):
     number_of_students = len(scores)
     number_of_subjects = len(scores[0]) if number_of_students > 0 else 0
+    for i in range(number_of_subjects):
+        total = 0
+        passes = 0
+        failures = 0
+        highest_score = scores[0][i]
+        lowest_score = scores[0][i]
+        highest_student = 1
+        lowest_student = 1
+
+        for student in range(number_of_students):
+            score = scores[student][i]
+            total += score
+            if score >= pass_mark:
+                passes += 1
+            else:
+                failures += 1
+            if score > highest_score:
+                highest_score = score
+                highest_student = student + 1
+            if score < lowest_score:
+                lowest_score = score
+                lowest_student = student + 1

@@ -56,3 +56,13 @@ def subject_summary(scores, pass_mark):
             if score < lowest_score:
                 lowest_score = score
                 lowest_student = student + 1
+        average = total / number_of_students
+
+        print("SUBJECT SUMMARY")
+        print(f"Subject {i + 1}")
+        print(f"  Highest Scoring student is : Student {highest_student} scoring {highest_score}")
+        print(f"  Lowest Scoring student is : Student {lowest_student} scoring {lowest_score}")
+        print(f"  Total Score is : {total}")
+        print(f"  Average Score is: {average:.2f}")
+        print(f"  Number of Passes: {passes}")
+        print(f"  Number of Fails: {failures}")

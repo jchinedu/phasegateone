@@ -1,47 +1,92 @@
 import java.util.Scanner;
+
 public class StudentGrade {
- public static void main(String[] args){
-	Scanner input = new Scanner(System.in);
-	System.out.print("how many students do you have: "); 
-	int NumberOfStudents = input.nextInt();
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
-	System.out.print("how many subjects do they offer: ");
-	int NumberOfSubjects = input.nextInt();
+        System.out.print("How many students do you have: ");
+        int numberOfStudents = input.nextInt();
 
-	int[][] scores = new int[NumberOfStudents][NumberOfSubjects];
+        System.out.print("How many subjects do they offer: ");
+        int numberOfSubjects = input.nextInt();
 
-	for(int i = 0; i < NumberOfStudents; i++){
-		System.out.println("Enter score of student " + (i+1));
-	for(int j = 0; j < NumberOfSubjects; j++){
-		int score;
-	   do{
-		System.out.println("Enter score for subject " + (j +1));
-		 score = input.nextInt();
-		if (score < 0 || score > 100){
-		System.out.print("invalid score, must be between 0-100");
-		}
-	   }while(score < 0 || score > 100);
-		scores[i][j] = score;
-		System.out.println("saving >>>>>>>>>>>>>>>");
-		System.out.println("saved successfully");
-	}
-	}
-		int[] totals = new int[NumberOfStudents];
-        double[] averages = new double[NumberOfStudents];
- 
+        int[][] scores = new int[numberOfStudents][numberOfSubjects];
+
+        for (int i = 0; i < numberOfStudents; i++) {
+            System.out.println("Enter scores for Student " + (i + 1));
+            for (int j = 0; j < numberOfSubjects; j++) {
+                int score;
+                do {
+                    System.out.print("Enter score for Subject " + (j + 1) + ": ");
+                    score = input.nextInt();
+                    if (score < 0 || score > 100) {
+                        System.out.println("Invalid score, must be between 0-100.");
+                    }
+                } while (score < 0 || score > 100);
+                scores[i][j] = score;
+                System.out.println("Saving >>>>>>>>>>>>>>>");
+                System.out.println("Saved successfully");
+            }
+        }
+
+        int[] totals = new int[numberOfStudents];
+        double[] averages = new double[numberOfStudents];
         StudentGradefunction.calculateTotals(scores, totals);
-        StudentGradefunction.calculateAverages(totals, averages, NumberOfSubjects);
-
+        StudentGradefunction.calculateAverages(totals, averages, numberOfSubjects);
         int[] positions = StudentGradefunction.checkPosition(totals);
 
-        StudentGradefunction.displayTable(scores, totals, averages, positions);
-        System.out.print("Enter pass mark : ");
+        System.out.print("Enter pass mark: ");
         int passMark = input.nextInt();
-        StudentGradefunction.subjectSummary(scores, passMark);
 
-	}
+        int option;
+        do {
+            System.out.println("\n=== MENU ===");
+            System.out.println("1. Display Student Table");
+            System.out.println("2. Display Subject Summary");
+            System.out.println("3. Display Class Summary");
+            System.out.println("0. Exit");
+            System.out.print("Choose an option: ");
+            option = input.nextInt();
+
+     switch (option) {
+                case 1:
+                    StudentGradefunction.displayTable(scores, totals, averages, positions);
+                    break;
+                case 2:
+                    StudentGradefunction.subjectSummary(scores, passMark);
+                    break;
+                case 3:
+                    int[] hardest = StudentGradefunction.findHardestSubject(scores, passMark);
+                    int[] easiest = StudentGradefunction.findEasiestSubject(scores, passMark);
+                    int[] highest = StudentGradefunction.findOverallHighestScore(scores);
+                    int[] lowest = StudentGradefunction.findOverallLowestScore(scores);
+                    int bestStudent = StudentGradefunction.findBestGraduatingStudent(totals);
+                    int worstStudent = StudentGradefunction.findWorstGraduatingStudent(totals);
+                    double[] classStats = StudentGradefunction.calculateClassTotalAndAverage(totals);
+                    System.out.printf("The Hardest Subject is Subject %d with %d failures\n", hardest[0] + 1, hardest[1]);
+                    System.out.printf("The Easiest Subject is Subject %d with %d passes\n", easiest[0] + 1, easiest[1]);
+                    System.out.printf("The overall Highest Score is scored by student %d in subject %d scoring %d\n", highest[0] + 1, highest[2], highest[1] + 1);
+                    System.out.printf("the overall Lowest Score is scores by Student %d in Subject %d Scoring %d\n",lowest[0] + 1, lowest[2],  lowest[1] + 1);
+                    System.out.println("===========================================================");
+		    System.out.print("CLASS SUMMARY");
+		    System.out.println("\n===========================================================");
+                    System.out.printf("Best Graduating Student is: Student %d scoring %d\n", bestStudent + 1, totals[bestStudent]);
+System.out.print("===========================================================\n");
+System.out.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+                    System.out.printf("Worst Graduating Student is: Student %d Scoring %d\n", worstStudent + 1, totals[worstStudent]);
+System.out.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! \n");
+System.out.print("===========================================================\n");
+                    System.out.printf("Class Total Score is: %.0f\n", classStats[0]);
+                    System.out.printf("Class Average Score is: %.2f\n", classStats[1]);
+System.out.print("\n===========================================================");
+                    break;
+                case 0:
+                    System.out.println("Exiting..");
+                    break;
+                default:
+                    System.out.println("Invalid option. Try again.");
+       }
+
+  } while (option != 0);
+ }
 }
-
-		
-
-	

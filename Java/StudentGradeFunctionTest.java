@@ -33,4 +33,34 @@ public class StudentGradeFunctionTest {
 @Test
     public void testDisplayTableOutput() {
     }
+@Test
+    void testFindHardestSubject() {
+        int[][] scores = {
+            {50, 60, 70},
+            {30, 20, 10},
+            {40, 30, 20}
+        };
+        int passMark = 40;
+        int[] result = StudentGradefunction.findHardestSubject(scores, passMark);
+        assertArrayEquals(new int[]{1, 2}, result);
+    }
+@Test
+    void testFindOverallHighestScore() {
+        int[][] scores = {
+            {50, 60, 70},
+            {80, 90, 100},
+            {40, 30, 20}
+        };
+        int[] result = StudentGradefunction.findOverallHighestScore(scores);
+
+        assertArrayEquals(new int[]{1, 2, 100}, result);
+    }
+@Test
+    void testCalculateClassTotalAndAverage() {
+        int[] totals = {180, 270, 90};
+        double[] result = StudentGradefunction.calculateClassTotalAndAverage(totals);
+        assertEquals(540.0, result[0]);
+        assertEquals(180.0, result[1]);
+    }
+
 }

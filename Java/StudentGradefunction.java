@@ -117,6 +117,107 @@ public static void calculateAverages(int[] totals, double[] averages, int number
         System.out.printf("  Number of Fails: %d\n", failures);
     }
 }
+public static int[] findHardestSubject(int[][] scores, int passMark) {
+    int numberOfSubjects = scores[0].length;
+    int numberOfStudents = scores.length;
+    int maxFailures = -1;
+    int hardestSubject = -1;
 
+    for (int k = 0; k < numberOfSubjects; k++) {
+        int failures = 0;
+        for (int student = 0; student < numberOfStudents; student++) {
+            if (scores[student][k] < passMark) {
+                failures++;
+            }
+        }
+        if (failures > maxFailures) {
+            maxFailures = failures;
+            hardestSubject = k;
+        }
+    }
+    return new int[]{hardestSubject, maxFailures};
+}
+public static int[] findEasiestSubject(int[][] scores, int passMark) {
+    int numberOfSubjects = scores[0].length;
+    int numberOfStudents = scores.length;
+    int maxPasses = -1;
+    int easiestSubject = -1;
+
+    for (int i = 0; i < numberOfSubjects; i++) {
+        int passes = 0;
+        for (int student = 0; student < numberOfStudents; student++) {
+            if (scores[student][i] >= passMark) {
+                passes++;
+            }
+        }
+        if (passes > maxPasses) {
+            maxPasses = passes;
+            easiestSubject = i;
+        }
+    }
+    return new int[]{easiestSubject, maxPasses};
+}
+public static int[] findOverallHighestScore(int[][] scores) {
+    int maxScore = -1;
+    int studentIndex = -1;
+    int subjectIndex = -1;
+
+    for (int i = 0; i < scores.length; i++) {
+        for (int j = 0; j < scores[0].length; j++) {
+            if (scores[i][j] > maxScore) {
+                maxScore = scores[i][j];
+                studentIndex = i;
+                subjectIndex = j;
+            }
+        }
+    }
+    return new int[]{studentIndex, subjectIndex, maxScore};
+}
+public static int[] findOverallLowestScore(int[][] scores) {
+    int minScore = 101;
+    int studentIndex = -1;
+    int subjectIndex = -1;
+
+    for (int i = 0; i < scores.length; i++) {
+        for (int j = 0; j < scores[0].length; j++) {
+            if (scores[i][j] < minScore) {
+                minScore = scores[i][j];
+                studentIndex = i;
+                subjectIndex = j;
+            }
+        }
+    }
+    return new int[]{studentIndex, subjectIndex, minScore};
+}
+public static int findBestGraduatingStudent(int[] totals) {
+    int maxTotal = -1;
+    int bestStudent = -1;
+    for (int i = 0; i < totals.length; i++) {
+        if (totals[i] > maxTotal) {
+            maxTotal = totals[i];
+            bestStudent = i;
+        }
+    }
+    return bestStudent;
+}
+public static int findWorstGraduatingStudent(int[] totals) {
+    int minTotal = Integer.MAX_VALUE;
+    int worstStudent = -1;
+    for (int i = 0; i < totals.length; i++) {
+        if (totals[i] < minTotal) {
+            minTotal = totals[i];
+            worstStudent = i;
+        }
+    }
+    return worstStudent;
+}
+public static double[] calculateClassTotalAndAverage(int[] totals) {
+    int sum = 0;
+    for (int total : totals) {
+        sum += total;
+    }
+    double average = (double) sum / totals.length;
+    return new double[]{sum, average};
+}
 
 }

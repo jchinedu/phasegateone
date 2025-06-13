@@ -12,14 +12,30 @@ public class StudentGrade {
 
 	for(int i = 0; i < NumberOfStudents; i++){
 		System.out.println("Enter score of student " + (i+1));
-		System.out.print("saving >>>>>>>>>>>>>>>");
-		System.out.print("saved successfully");
 	for(int j = 0; j < NumberOfSubjects; j++){
-		System.out.println("Enter score for subject " + (i +1));
-		System.out.print("saving >>>>>>>>>>>>>>>");
-		System.out.print("saved successfully");
+		int score;
+	   do{
+		System.out.println("Enter score for subject " + (j +1));
+		 score = input.nextInt();
+		if (score < 0 || score > 100){
+		System.out.print("invalid score, must be between 0-100");
+		}
+	   }while(score < 0 || score > 100);
+		scores[i][j] = score;
+		System.out.println("saving >>>>>>>>>>>>>>>");
+		System.out.println("saved successfully");
+	}
+	}
+		int[] totals = new int[NumberOfStudents];
+        double[] averages = new double[NumberOfStudents];
+ 
+        StudentGradefunction.calculateTotalsAndAverages(scores, totals, averages);
+        int[] positions = StudentGradefunction.checkPosition(totals);
+        StudentGradefunction.displayTable(scores, totals, averages, positions);
 
-		do {
-			System.out.print("
+	}
+}
+
+		
 
 	

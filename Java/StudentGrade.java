@@ -58,27 +58,9 @@ public class StudentGrade {
                 case 3:
                     int[] hardest = StudentGradefunction.findHardestSubject(scores, passMark);
                     int[] easiest = StudentGradefunction.findEasiestSubject(scores, passMark);
-                    int[] highest = StudentGradefunction.findOverallHighestScore(scores);
-                    int[] lowest = StudentGradefunction.findOverallLowestScore(scores);
-                    int bestStudent = StudentGradefunction.findBestGraduatingStudent(totals);
-                    int worstStudent = StudentGradefunction.findWorstGraduatingStudent(totals);
-                    double[] classStats = StudentGradefunction.calculateClassTotalAndAverage(totals);
                     System.out.printf("The Hardest Subject is Subject %d with %d failures\n", hardest[0] + 1, hardest[1]);
                     System.out.printf("The Easiest Subject is Subject %d with %d passes\n", easiest[0] + 1, easiest[1]);
-                    System.out.printf("The overall Highest Score is scored by student %d in subject %d scoring %d\n", highest[0] + 1, highest[2], highest[1] + 1);
-                    System.out.printf("the overall Lowest Score is scores by Student %d in Subject %d Scoring %d\n",lowest[0] + 1, lowest[2],  lowest[1] + 1);
                     System.out.println("===========================================================");
-		    System.out.print("CLASS SUMMARY");
-		    System.out.println("\n===========================================================");
-                    System.out.printf("Best Graduating Student is: Student %d scoring %d\n", bestStudent + 1, totals[bestStudent]);
-System.out.print("===========================================================\n");
-System.out.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-                    System.out.printf("Worst Graduating Student is: Student %d Scoring %d\n", worstStudent + 1, totals[worstStudent]);
-System.out.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! \n");
-System.out.print("===========================================================\n");
-                    System.out.printf("Class Total Score is: %.0f\n", classStats[0]);
-                    System.out.printf("Class Average Score is: %.2f\n", classStats[1]);
-System.out.print("\n===========================================================");
                     break;
                 case 0:
                     System.out.println("Exiting..");

@@ -66,3 +66,18 @@ def subject_summary(scores, pass_mark):
         print(f"  Average Score is: {average:.2f}")
         print(f"  Number of Passes: {passes}")
         print(f"  Number of Fails: {failures}")
+def find_hardest_subject(scores, pass_mark):
+    number_of_subjects = len(scores[0])
+    number_of_students = len(scores)
+    max_failures = -1
+    hardest_subject = -1
+
+    for k in range(number_of_subjects):
+        failures = 0
+        for student in range(number_of_students):
+            if scores[student][k] < pass_mark:
+                failures += 1
+        if failures > max_failures:
+            max_failures = failures
+            hardest_subject = k
+    return hardest_subject, max_failures

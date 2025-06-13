@@ -109,8 +109,8 @@ public static void calculateAverages(int[] totals, double[] averages, int number
 	
 	System.out.print("SUBJECT SUMMARY\n");
         System.out.printf("Subject %d\n", i + 1);
-	System.out.printf("  Highest Scoring student is : (Student %d) scoring  %d\n", highestStudent, highestScore);
-	System.out.printf("  Lowest Scoring student is : (Student %d) scoring  %d\n", lowestStudent, lowestScore );
+	System.out.printf("  Highest Scoring student is : Student %d scoring  %d\n", highestStudent, highestScore);
+	System.out.printf("  Lowest Scoring student is : Student %d scoring  %d\n", lowestStudent, lowestScore );
         System.out.printf("  Total Score is : %d\n", total);
         System.out.printf("  Average Score is: %.2f\n", average);
         System.out.printf("  Number of Passes: %d\n", passes);

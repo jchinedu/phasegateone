@@ -29,32 +29,38 @@ public class StudentGradefunction {
 
 
     public static void displayTable(int[][] scores, int[] totals, double[] averages, int[] positions) {
-        int numberOfStudents = scores.length;
-        int numberOfSubjects = scores[0].length;
-	for(int index = 0; index <= (39 + (numberOfSubjects* 2)) ; index++){
-		System.out.print("=");
-	}
-        System.out.print("\nStudent\t");
-        for (int j = 0; j < numberOfSubjects; j++) {
-            System.out.print("Sub" + (j + 1) + "\t");
-        }
-        System.out.println("Total\tAverage\tPosition");
-	for(int index = 0; index <= (39 + (numberOfSubjects* 2)) ; index++){
-		System.out.print("=");
-	}
+    int numberOfStudents = scores.length;
+    int numberOfSubjects = scores[0].length;
 
-        for (int i = 0; i < numberOfStudents; i++) {
-            System.out.print((i + 1) + "\t"); 
-            for (int j = 0; j < numberOfSubjects; j++) {
-                System.out.print(scores[i][j] + "\t");
-            }
-            System.out.printf("%d\t%.2f\t%d", totals[i], averages[i], positions[i]);
-        }
-	for(int k = 0; k < 2; k++){
-	 for(int i = 0; i <(39 + (numberOfSubjects* 2)); i++){
-		System.out.print("=");
+    for (int index = 0; index <= (39 + (numberOfSubjects * (numberOfSubjects/2))); index++) {
+        System.out.print("=");
     }
-	System.out.println();
-} 
+    System.out.println();
+
+    System.out.printf("%-8s", "Student");
+    for (int j = 0; j < numberOfSubjects; j++) {
+        System.out.printf("%-8s", "Sub" + (j + 1));
+    }
+    System.out.printf("%-8s%-8s%-8s\n", "Total", "Average", "Position");
+
+    for (int index = 0; index <= (39 + (numberOfSubjects * (numberOfSubjects/2))); index++) {
+        System.out.print("=");
+    }
+    System.out.println();
+
+    for (int i = 0; i < numberOfStudents; i++) {
+        System.out.printf("%-8d", i + 1);
+        for (int j = 0; j < numberOfSubjects; j++) {
+            System.out.printf("%-8d", scores[i][j]);
+        }
+        System.out.printf("%-8d%-8.2f%-8d\n", totals[i], averages[i], positions[i]);
+    }
+
+    for (int k = 0; k < 2; k++) {
+        for (int i = 0; i < (39 + (numberOfSubjects * (numberOfSubjects/2))); i++) {
+            System.out.print("=");
+        }
+        System.out.println();
+    }
 }
 }

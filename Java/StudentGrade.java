@@ -29,9 +29,15 @@ public class StudentGrade {
 		int[] totals = new int[NumberOfStudents];
         double[] averages = new double[NumberOfStudents];
  
-        StudentGradefunction.calculateTotalsAndAverages(scores, totals, averages);
+        StudentGradefunction.calculateTotals(scores, totals);
+        StudentGradefunction.calculateAverages(totals, averages, NumberOfSubjects);
+
         int[] positions = StudentGradefunction.checkPosition(totals);
+
         StudentGradefunction.displayTable(scores, totals, averages, positions);
+        System.out.print("Enter pass mark : ");
+        int passMark = input.nextInt();
+        StudentGradefunction.subjectSummary(scores, passMark);
 
 	}
 }

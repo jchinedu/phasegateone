@@ -31,3 +31,6 @@ def display_table(scores, totals, averages, positions):
         print(f"{totals[i]:<8}{averages[i]:<8.2f}{positions[i]:<8}")
     for _ in range(2):
         print("=" * line_length)
+def subject_summary(scores, pass_mark):
+    number_of_students = len(scores)
+    number_of_subjects = len(scores[0]) if number_of_students > 0 else 0

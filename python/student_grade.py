@@ -96,3 +96,25 @@ def find_easiest_subject(scores, pass_mark):
             max_passes = passes
             easiest_subject = i
     return easiest_subject, max_passes
+def main():
+    number_of_students = int(input("How many students do you have: "))
+    number_of_subjects = int(input("How many subjects do they offer: "))
+
+    scores = []
+    for i in range(number_of_students):
+        print(f"Enter scores for Student {i + 1}")
+        student_scores = []
+        for j in range(number_of_subjects):
+            while True:
+                score = int(input(f"Enter score for Subject {j + 1}: "))
+                if 0 <= score <= 100:
+                    break
+                print("Invalid score, must be between 0-100.")
+            print("Saving >>>>>>>>>>>>>>>")
+            print("Saved successfully")
+            student_scores.append(score)
+        scores.append(student_scores)
+    totals = calculate_totals(scores)
+    averages = calculate_averages(totals, number_of_subjects)
+    positions = check_position(totals)
+

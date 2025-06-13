@@ -48,7 +48,7 @@ public class StudentGradefunction {
             for (int j = 0; j < numberOfSubjects; j++) {
                 System.out.print(scores[i][j] + "\t");
             }
-            System.out.printf("%d\t%.2f\t%d\n", totals[i], averages[i], positions[i]);
+            System.out.printf("%d\t%.2f\t%d", totals[i], averages[i], positions[i]);
         }
 	for(int k = 0; k < 2; k++){
 	 for(int i = 0; i <(39 + (numberOfSubjects* 2)); i++){

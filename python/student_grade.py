@@ -81,3 +81,18 @@ def find_hardest_subject(scores, pass_mark):
             max_failures = failures
             hardest_subject = k
     return hardest_subject, max_failures
+def find_easiest_subject(scores, pass_mark):
+    number_of_subjects = len(scores[0])
+    number_of_students = len(scores)
+    max_passes = -1
+    easiest_subject = -1
+
+    for i in range(number_of_subjects):
+        passes = 0
+        for student in range(number_of_students):
+            if scores[student][i] >= pass_mark:
+                passes += 1
+        if passes > max_passes:
+            max_passes = passes
+            easiest_subject = i
+    return easiest_subject, max_passes

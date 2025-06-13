@@ -22,4 +22,12 @@ public class StudentGradeFunctionTest {
 
         assertArrayEquals(new double[]{80.0, 73.33, 95.0}, averages, 0.01);
     }
+ @Test
+    public void testCheckPosition() {
+        int[] totals = {240, 220, 285}; 
+        int[] expectedRanks = {2, 3, 1};
+        int[] positions = StudentGradefunction.checkPosition(totals);
+
+        assertArrayEquals(expectedRanks, positions);
+    }
 }

@@ -24,3 +24,10 @@ def display_table(scores, totals, averages, positions):
         print(f"Sub{j + 1:<8}", end="")
     print(f"{'Total':<8}{'Average':<8}{'Position':<8}")
     print("=" * line_length)
+    for i in range(number_of_students):
+        print(f"{i+1:<8}", end="")
+        for j in range(number_of_subjects):
+            print(f"{scores[i][j]:<8}", end="")
+        print(f"{totals[i]:<8}{averages[i]:<8.2f}{positions[i]:<8}")
+    for _ in range(2):
+        print("=" * line_length)

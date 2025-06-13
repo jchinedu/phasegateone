@@ -14,3 +14,13 @@ def check_position(totals):
                 rank += 1
         ranks.append(rank)
     return ranks
+def display_table(scores, totals, averages, positions):
+    number_of_students = len(scores)
+    number_of_subjects = len(scores[0]) if number_of_students > 0 else 0
+    line_length = int(39 + (number_of_subjects * (number_of_subjects) * 1.5))
+    print("=" * line_length)
+    print(f"{'Student':<8}", end="")
+    for j in range(number_of_subjects):
+        print(f"Sub{j + 1:<8}", end="")
+    print(f"{'Total':<8}{'Average':<8}{'Position':<8}")
+    print("=" * line_length)

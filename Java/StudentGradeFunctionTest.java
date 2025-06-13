@@ -30,4 +30,7 @@ public class StudentGradeFunctionTest {
 
         assertArrayEquals(expectedRanks, positions);
     }
+@Test
+    public void testDisplayTableOutput() {
+    }
 }

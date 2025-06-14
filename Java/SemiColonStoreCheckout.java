@@ -6,11 +6,11 @@ import java.time.format.DateTimeFormatter;
 
 public class SemiColonStoreCheckout {
 public static void main(String[] args) {
-	Scanner scanner = new Scanner(System.in);
+	Scanner input = new Scanner(System.in);
 	System.out.println("Welcome to SemiColon Stores Checkout System!");
 
 	System.out.print("Enter customer name: ");
-        String customerName = scanner.nextLine();
+        String customerName = input.nextLine();
 
 
 	ArrayList<String> productNames = new ArrayList<>();
@@ -19,26 +19,26 @@ public static void main(String[] args) {
 
 	while (true) {
     		System.out.print("Enter product name (or 'done' to finish): ");
-    String product = scanner.nextLine();
+    String product = input.nextLine();
 
     if (product.equalsIgnoreCase("done")) {
         break;
     }
 
     System.out.print("Enter unit price: ");
-    while (!scanner.hasNextDouble()) {
+    while (!input.hasNextDouble()) {
         System.out.print("Invalid input. Enter a valid number: ");
-        scanner.next();
+        input.next();
     }
-    double price = scanner.nextDouble();
+    double price = input.nextDouble();
 
     System.out.print("Enter quantity purchased: ");
-    while (!scanner.hasNextInt()) {
+    while (!input.hasNextInt()) {
         System.out.print("Invalid input. Enter a valid integer: ");
-        scanner.next();
+        input.next();
     }
-    int qty = scanner.nextInt();
-    scanner.nextLine(); 
+    int qty = input.nextInt();
+    input.nextLine(); 
 
     productNames.add(product);
     unitPrices.add(price);
@@ -47,14 +47,14 @@ public static void main(String[] args) {
 
 	
 		System.out.print("Enter cashier name: ");
-        String cashierName = scanner.nextLine();
+        String cashierName = input.nextLine();
 
 		System.out.print("Is there any discount for this customer? (yes/no): ");
-        String discountResponse = scanner.nextLine();
+        String discountResponse = input.nextLine();
         double discountPercent = 0.0;
         if (discountResponse.equalsIgnoreCase("yes")) {
             System.out.print("Enter discount percentage: ");
-            discountPercent = getValidDouble(scanner);
+            discountPercent = getValidDouble(input);
             if (discountPercent < 0) discountPercent = 0;
             if (discountPercent > 100) discountPercent = 100;
         }
@@ -97,7 +97,7 @@ public static void main(String[] args) {
 	System.out.println("=====================================================");
         System.out.println();
 
-		 double amountPaid = handlePayment(scanner, totalDue);
+		 double amountPaid = handlePayment(input, totalDue);
 
 		 printHeader();
         System.out.println("RECEIPT - SEMICOLON STORES");
@@ -124,19 +124,19 @@ public static void main(String[] args) {
 	
 	}
     
-	public static int getValidInt(Scanner scanner) {
-        while (!scanner.hasNextInt()) {
+	public static int getValidInt(Scanner input) {
+        while (!input.hasNextInt()) {
             System.out.print("Invalid input. Enter a valid integer: ");
-            scanner.next();
+            input.next();
         }
-        return scanner.nextInt();
+        return input.nextInt();
     }
-	public static double getValidDouble(Scanner scanner) {
-        while (!scanner.hasNextDouble()) {
+	public static double getValidDouble(Scanner input) {
+        while (!input.hasNextDouble()) {
             System.out.print("Invalid input. Enter a valid number: ");
-            scanner.next();
+            input.next();
         }
-        return scanner.nextDouble();
+        return input.nextDouble();
     }
 	public static void printHeader() {
         System.out.println("====================================================");
@@ -146,23 +146,23 @@ public static void main(String[] args) {
         System.out.println("Tel: +123 456 7890             ");
         System.out.println("Date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
            }
-	public  static double handlePayment(Scanner scanner, double totalDue) {
+	public  static double handlePayment(Scanner input, double totalDue) {
         System.out.println("Select payment method:");
         System.out.println("1. Cash");
         System.out.println("2. Card");
         System.out.println("3. Mobile Money");
         System.out.print("Enter your choice: ");
-        int paymentChoice = getValidInt(scanner);
-        scanner.nextLine();
+        int paymentChoice = getValidInt(input);
+        input.nextLine();
 	
 	switch (paymentChoice) {
             case 1:
                 System.out.print("Enter amount paid by customer: ");
-                double amountPaid = getValidDouble(scanner);
-                scanner.nextLine();
+                double amountPaid = getValidDouble(input);
+                input.nextLine();
                 if (amountPaid < totalDue) {
                     System.out.println("Insufficient payment. Please pay at least: " + String.format("%.2f", totalDue));
-                    return handlePayment(scanner, totalDue);
+                    return handlePayment(input, totalDue);
                 } else {
                     double change = amountPaid - totalDue;
                     System.out.println("Change to give back: " + String.format("%.2f", change));
@@ -170,18 +170,18 @@ public static void main(String[] args) {
                 }
             case 2:
                 System.out.print("Enter card number (simulate): ");
-                String cardNumber = scanner.nextLine();
+                String cardNumber = input.nextLine();
                 System.out.println("Payment of " + String.format("%.2f", totalDue) + " processed via card ending with "
                         + cardNumber.substring(Math.max(0, cardNumber.length() - 4)));
                 return totalDue;
             case 3:
                 System.out.print("Enter mobile money reference: ");
-                String mmRef = scanner.nextLine();
+                String mmRef = input.nextLine();
                 System.out.println("Payment of " + String.format("%.2f", totalDue) + " processed with reference " + mmRef);
                 return totalDue;
             default:
                 System.out.println("Invalid payment method. Please try again.");
-                return handlePayment(scanner, totalDue);
+                return handlePayment(input, totalDue);
         }
 }
 

@@ -38,3 +38,10 @@ function displayTable(scores, totals, averages, positions) {
   const numberOfStudents = scores.length;
   const numberOfSubjects = scores[0].length;
   const lineLength = 39 + numberOfSubjects * numberOfSubjects * 1.5;
+console.log("=".repeat(lineLength));
+  process.stdout.write("Student  ");
+  for (let j = 0; j < numberOfSubjects; j++) {
+    process.stdout.write(`Sub${j + 1}   `);
+  }
+process.stdout.write("Total   Average Position\n");
+  console.log("=".repeat(lineLength));

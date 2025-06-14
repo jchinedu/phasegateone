@@ -14,3 +14,10 @@ function calculateTotals(scores) {
 
   return totals;
 }
+function calculateAverages(totals, numberOfSubjects) {
+  let averages = [];
+  for (let i = 0; i < totals.length; i++) {
+    averages.push(totals[i] / numberOfSubjects);
+  }
+  return averages;
+}

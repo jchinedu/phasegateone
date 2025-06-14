@@ -34,3 +34,7 @@ function checkPosition(totals) {
   }
   return ranks;
 }
+function displayTable(scores, totals, averages, positions) {
+  const numberOfStudents = scores.length;
+  const numberOfSubjects = scores[0].length;
+  const lineLength = 39 + numberOfSubjects * numberOfSubjects * 1.5;

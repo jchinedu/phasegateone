@@ -118,3 +118,31 @@ def main():
     averages = calculate_averages(totals, number_of_subjects)
     positions = check_position(totals)
 
+    pass_mark = int(input("Enter pass mark: "))
+
+    option = None
+    while option != 0:
+        print("\n=== MENU ===")
+        print("1. Display Student Table")
+        print("2. Display Subject Summary")
+        print("3. Display Class Summary")
+        print("0. Exit")
+        option = int(input("Choose an option: "))
+
+        if option == 1:
+            display_table(scores, totals, averages, positions)
+        elif option == 2:
+            subject_summary(scores, pass_mark)
+        elif option == 3:
+            hardest, failures = find_hardest_subject(scores, pass_mark)
+            easiest, passes = find_easiest_subject(scores, pass_mark)
+            print(f"The Hardest Subject is Subject {hardest + 1} with {failures} failures")
+            print(f"The Easiest Subject is Subject {easiest + 1} with {passes} passes")
+            print("===========================================================")
+        elif option == 0:
+            print("Exiting..")
+        else:
+            print("Invalid option. Try again.")
+
+main()
+

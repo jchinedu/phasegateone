@@ -23,6 +23,8 @@ def check(card_number):
 		digit = int(card_number[i])
 		if double_digit:
 			digit *= 2
+			if digit > 9:
+                		digit -= 9
 		total += digit
 		double_digit = not double_digit
 	return total % 10 == 0

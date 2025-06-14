@@ -66,36 +66,6 @@ def subject_summary(scores, pass_mark):
         print(f"  Average Score is: {average:.2f}")
         print(f"  Number of Passes: {passes}")
         print(f"  Number of Fails: {failures}")
-def find_hardest_subject(scores, pass_mark):
-    number_of_subjects = len(scores[0])
-    number_of_students = len(scores)
-    max_failures = -1
-    hardest_subject = -1
-
-    for k in range(number_of_subjects):
-        failures = 0
-        for student in range(number_of_students):
-            if scores[student][k] < pass_mark:
-                failures += 1
-        if failures > max_failures:
-            max_failures = failures
-            hardest_subject = k
-    return hardest_subject, max_failures
-def find_easiest_subject(scores, pass_mark):
-    number_of_subjects = len(scores[0])
-    number_of_students = len(scores)
-    max_passes = -1
-    easiest_subject = -1
-
-    for i in range(number_of_subjects):
-        passes = 0
-        for student in range(number_of_students):
-            if scores[student][i] >= pass_mark:
-                passes += 1
-        if passes > max_passes:
-            max_passes = passes
-            easiest_subject = i
-    return easiest_subject, max_passes
 def main():
     number_of_students = int(input("How many students do you have: "))
     number_of_subjects = int(input("How many subjects do they offer: "))
@@ -133,11 +103,6 @@ def main():
             display_table(scores, totals, averages, positions)
         elif option == 2:
             subject_summary(scores, pass_mark)
-        elif option == 3:
-            hardest, failures = find_hardest_subject(scores, pass_mark)
-            easiest, passes = find_easiest_subject(scores, pass_mark)
-            print(f"The Hardest Subject is Subject {hardest + 1} with {failures} failures")
-            print(f"The Easiest Subject is Subject {easiest + 1} with {passes} passes")
             print("===========================================================")
         elif option == 0:
             print("Exiting..")

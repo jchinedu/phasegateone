@@ -61,4 +61,32 @@ for (let k = 0; k < 2; k++) {
 function subjectSummary(scores, passMark) {
   const numberOfStudents = scores.length;
   const numberOfSubjects = scores[0].length;
+for (let i = 0; i < numberOfSubjects; i++) {
+    let total = 0;
+    let passes = 0;
+    let failures = 0;
+    let highestScore = scores[0][i];
+    let lowestScore = scores[0][i];
+    let highestStudent = 1;
+    let lowestStudent = 1;
 
+    for (let student = 0; student < numberOfStudents; student++) {
+      const score = scores[student][i];
+      total += score;
+
+      if (score >= passMark) {
+        passes++;
+      } else {
+        failures++;
+      }
+
+      if (score > highestScore) {
+        highestScore = score;
+        highestStudent = student + 1;
+      }
+
+      if (score < lowestScore) {
+        lowestScore = score;
+        lowestStudent = student + 1;
+      }
+    }

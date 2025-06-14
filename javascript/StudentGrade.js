@@ -45,3 +45,20 @@ console.log("=".repeat(lineLength));
   }
 process.stdout.write("Total   Average Position\n");
   console.log("=".repeat(lineLength));
+for (let i = 0; i < numberOfStudents; i++) {
+    process.stdout.write(`${i + 1}        `);
+    for (let j = 0; j < numberOfSubjects; j++) {
+      process.stdout.write(`${scores[i][j]}      `);
+    }
+process.stdout.write(
+      `${totals[i]}      ${averages[i].toFixed(2)}   ${positions[i]}\n`
+    );
+  }
+for (let k = 0; k < 2; k++) {
+    console.log("=".repeat(lineLength));
+  }
+}
+function subjectSummary(scores, passMark) {
+  const numberOfStudents = scores.length;
+  const numberOfSubjects = scores[0].length;
+

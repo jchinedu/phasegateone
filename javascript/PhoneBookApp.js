@@ -31,5 +31,10 @@ for (let i = 0; i < contacts.length; i++) {
       break;
     }
   }
+if (!found) {
+    console.log("Contact not found.");
+  }
+}
+
 
 

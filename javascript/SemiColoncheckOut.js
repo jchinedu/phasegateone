@@ -15,6 +15,11 @@ while (true) {
   while (isNaN(qty) || !Number.isInteger(qty)) {
     qty = Number(prompt("Invalid input. Enter a valid integer: "));
   }
+  productNames.push(product);
+  unitPrices.push(price);
+  quantities.push(qty);
+}
+
 
 
 

@@ -9,3 +9,5 @@ function addContact() {
   contacts.push({ firstName: firstName, lastName: lastName, phoneNumber: phoneNumber });
   console.log("Contact added successfully.");
 }
+function removeContact() {
+	let PhoneNumber = prompt("Enter phone number to remove: ");

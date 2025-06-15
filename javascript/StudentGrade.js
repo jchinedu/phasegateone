@@ -90,3 +90,72 @@ for (let i = 0; i < numberOfSubjects; i++) {
         lowestStudent = student + 1;
       }
     }
+const average = total / numberOfStudents;
+
+    console.log("SUBJECT SUMMARY");
+    console.log(`Subject ${i + 1}`);
+    console.log(
+      `  Highest Scoring student is : Student ${highestStudent} scoring ${highestScore}`
+    );
+    console.log(
+      `  Lowest Scoring student is : Student ${lowestStudent} scoring ${lowestScore}`
+    );
+    console.log(`  Total Score is : ${total}`);
+    console.log(`  Average Score is: ${average.toFixed(2)}`);
+    console.log(`  Number of Passes: ${passes}`);
+    console.log(`  Number of Fails: ${failures}`);
+  }
+}
+const numberOfStudents = parseInt(prompt("How many students do you have: "));
+const numberOfSubjects = parseInt(prompt("How many subjects do they offer: "));
+
+const scores = [];
+
+for (let i = 0; i < numberOfStudents; i++) {
+  console.log(`Enter scores for Student ${i + 1}`);
+  const studentScores = [];
+  for (let j = 0; j < numberOfSubjects; j++) {
+    let score;
+    do {
+      score = parseInt(prompt(`Enter score for Subject ${j + 1}: `));
+      if (score < 0 || score > 100) {
+        console.log("Invalid score, must be between 0-100.");
+      }
+    } while (score < 0 || score > 100);
+    studentScores.push(score);
+    console.log("Saving >>>>>>>>>>>>>>>");
+    console.log("Saved successfully");
+  }
+  scores.push(studentScores);
+}
+
+const totals = calculateTotals(scores);
+const averages = calculateAverages(totals, numberOfSubjects);
+const positions = checkPosition(totals);
+
+const passMark = parseInt(prompt("Enter pass mark: "));
+
+let option;
+do {
+  console.log("\n=== MENU ===");
+  console.log("1. Display Student Table");
+  console.log("2. Display Subject Summary");
+  console.log("3. Display Class Summary");
+  console.log("0. Exit");
+  option = parseInt(prompt("Choose an option: "));
+
+  switch (option) {
+    case 1:
+      displayTable(scores, totals, averages, positions);
+      break;
+    case 2:
+      subjectSummary(scores, passMark);
+      break;
+    case 3:
+    case 0:
+      console.log("Exiting...");
+      break;
+    default:
+      console.log("Invalid option. Try again.");
+  }
+} while (option !== 0);

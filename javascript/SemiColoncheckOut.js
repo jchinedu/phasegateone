@@ -19,6 +19,11 @@ while (true) {
   unitPrices.push(price);
   quantities.push(qty);
 }
+
+if (productNames.length === 0) {
+  console.log("No products entered. Checkout cannot proceed.");
+  return;
+}
 let cashierName = prompt("Enter cashier name: ");
 let discountPercent = 0;
 let discountResponse = prompt("Is there any discount for this customer? (yes/no): ");
@@ -80,6 +85,22 @@ function handlePayment(totalDue) {
     }
   }
 }
+let amountPaid = handlePayment(totalDue);
+
+console.log("Receipt:");
+console.log("Customer: " + customerName);
+console.log("Cashier: " + cashierName);
+console.log("Items:");
+for (let i = 0; i < productNames.length; i++) {
+  let lineTotal = quantities[i] * unitPrices[i];
+  console.log(productNames[i] + " - Qty: " + quantities[i] + ", Price: " + unitPrices[i] + ", Total: " + lineTotal);
+}
+console.log("Subtotal: " + subtotal);
+console.log("Discount: " + discountAmount);
+console.log("VAT: " + vat);
+console.log("Total Paid: " + amountPaid);
+console.log("Change: " + (amountPaid - totalDue));
+console.log("Thank you for shopping with SemiColon Stores!");
 
 
 

@@ -50,6 +50,21 @@ function findContactByName() {
   if (!found) {
     console.log("Contact not found.");
   }
+  }
+function editContact() {
+  const phoneNumber = prompt("Enter phone number of contact to edit: ");
+  let found = false;
+
+  for (let i = 0; i < contacts.length; i++) {
+    if (contacts[i].phoneNumber === phoneNumber) {
+      contacts[i].firstName = prompt("Enter new first name: ");
+      contacts[i].lastName = prompt("Enter new last name: ");
+      contacts[i].phoneNumber = prompt("Enter new phone number: ");
+      console.log("Contact updated successfully.");
+      found = true;
+      break;
+    }
+  }
 
 
 

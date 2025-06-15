@@ -35,6 +35,22 @@ if (!found) {
     console.log("Contact not found.");
   }
 }
+function findContactByName() {
+  const name = prompt("Enter first or last name to find: ");
+  let found = false;
+
+  for (let i = 0; i < contacts.length; i++) {
+    if (contacts[i].firstName === name || contacts[i].lastName === name) {
+      console.log("Found contact: " + contacts[i].firstName + " " + contacts[i].lastName);
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    console.log("Contact not found.");
+  }
+
 
 
 

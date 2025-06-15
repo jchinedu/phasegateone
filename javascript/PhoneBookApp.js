@@ -65,7 +65,18 @@ function editContact() {
       break;
     }
   }
-
-
+ if (!found) {
+    console.log("Contact not found.");
+  }
+}
+ 
+function menu() {
+  console.log("\nPhone Book App");
+  console.log("1. Add Contact");
+  console.log("2. Remove Contact");
+  console.log("3. Find Contact by Phone Number");
+  console.log("4. Find Contact by Name");
+  console.log("5. Edit Contact");
+  console.log("6. Exit");
 
 

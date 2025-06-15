@@ -31,6 +31,10 @@ let subtotal = 0;
 for (let i = 0; i < productNames.length; i++) {
   subtotal += quantities[i] * unitPrices[i];
 }
+let discountAmount = subtotal * discountPercent / 100;
+let totalAfterDiscount = subtotal - discountAmount;
+let vat = totalAfterDiscount * 0.075;
+let totalDue = totalAfterDiscount + vat;
 
 
 

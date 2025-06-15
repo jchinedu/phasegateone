@@ -24,4 +24,12 @@ function removeContact() {
 function findContactByPhone() {
   const phoneNumber = prompt("Enter phone number to find: ");
   let found = false;
+for (let i = 0; i < contacts.length; i++) {
+    if (contacts[i].phoneNumber === phoneNumber) {
+      console.log("Found contact: " + contacts[i].firstName + " " + contacts[i].lastName);
+      found = true;
+      break;
+    }
+  }
+
 

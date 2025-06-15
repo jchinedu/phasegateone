@@ -22,6 +22,12 @@ while (true) {
 let cashierName = prompt("Enter cashier name: ");
 let discountPercent = 0;
 let discountResponse = prompt("Is there any discount for this customer? (yes/no): ");
+if (discountResponse.toLowerCase() === "yes") {
+  discountPercent = Number(prompt("Enter discount percentage: "));
+  if (isNaN(discountPercent) || discountPercent < 0) discountPercent = 0;
+  if (discountPercent > 100) discountPercent = 100;
+}
+
 
 
 

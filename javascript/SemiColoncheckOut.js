@@ -20,6 +20,9 @@ while (true) {
   quantities.push(qty);
 }
 let cashierName = prompt("Enter cashier name: ");
+let discountPercent = 0;
+let discountResponse = prompt("Is there any discount for this customer? (yes/no): ");
+
 
 
 

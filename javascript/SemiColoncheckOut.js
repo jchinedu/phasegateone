@@ -11,6 +11,11 @@ while (true) {
   while (isNaN(price)) {
     price = Number(prompt("Invalid input. Enter a valid number: "));
   }
+	let qty = Number(prompt("Enter quantity purchased: "));
+  while (isNaN(qty) || !Number.isInteger(qty)) {
+    qty = Number(prompt("Invalid input. Enter a valid integer: "));
+  }
+
 
 
 

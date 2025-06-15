@@ -7,6 +7,12 @@ let unitPrices = [];
 while (true) {
 	let product = prompt("Enter product name (or 'done' to finish): ");
   if (product.toLowerCase() === "done") break;
+	let price = Number(prompt("Enter unit price: "));
+  while (isNaN(price)) {
+    price = Number(prompt("Invalid input. Enter a valid number: "));
+  }
+
+
 
 
 

@@ -35,6 +35,14 @@ let discountAmount = subtotal * discountPercent / 100;
 let totalAfterDiscount = subtotal - discountAmount;
 let vat = totalAfterDiscount * 0.075;
 let totalDue = totalAfterDiscount + vat;
+console.log("Customer: " + customerName);
+console.log("Cashier: " + cashierName);
+console.log("Items:");
+for (let i = 0; i < productNames.length; i++) {
+  let lineTotal = quantities[i] * unitPrices[i];
+  console.log(productNames[i] + " - Qty: " + quantities[i] + ", Price: " + unitPrices[i] + ", Total: " + lineTotal);
+}
+
 
 
 

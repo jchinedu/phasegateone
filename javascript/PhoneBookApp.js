@@ -18,3 +18,10 @@ function removeContact() {
 	      newContacts.push(contacts[i]);
 	}
 	}
+	contacts = newContacts;
+  console.log("Contact removed successfully.");
+}
+function findContactByPhone() {
+  const phoneNumber = prompt("Enter phone number to find: ");
+  let found = false;
+

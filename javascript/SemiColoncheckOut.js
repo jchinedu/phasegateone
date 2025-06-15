@@ -5,5 +5,9 @@ let productNames = [];
 let quantities = [];
 let unitPrices = [];
 while (true) {
+	let product = prompt("Enter product name (or 'done' to finish): ");
+  if (product.toLowerCase() === "done") break;
+
+
 
 

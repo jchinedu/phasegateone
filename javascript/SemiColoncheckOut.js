@@ -27,6 +27,11 @@ if (discountResponse.toLowerCase() === "yes") {
   if (isNaN(discountPercent) || discountPercent < 0) discountPercent = 0;
   if (discountPercent > 100) discountPercent = 100;
 }
+let subtotal = 0;
+for (let i = 0; i < productNames.length; i++) {
+  subtotal += quantities[i] * unitPrices[i];
+}
+
 
 
 

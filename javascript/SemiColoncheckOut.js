@@ -19,6 +19,8 @@ while (true) {
   unitPrices.push(price);
   quantities.push(qty);
 }
+let cashierName = prompt("Enter cashier name: ");
+
 
 
 

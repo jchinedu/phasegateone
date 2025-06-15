@@ -78,5 +78,6 @@ function menu() {
   console.log("4. Find Contact by Name");
   console.log("5. Edit Contact");
   console.log("6. Exit");
+const choice = prompt("Choose an option: ");
 
 

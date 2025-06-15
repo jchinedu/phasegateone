@@ -4,4 +4,6 @@ let customerName = prompt("Enter customer name: ");
 let productNames = [];
 let quantities = [];
 let unitPrices = [];
+while (true) {
+
 

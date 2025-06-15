@@ -10,7 +10,7 @@ function addContact() {
   console.log("Contact added successfully.");
 }
 function removeContact() {
-	let PhoneNumber = prompt("Enter phone number to remove: ");
+	let phoneNumber = prompt("Enter phone number to remove: ");
 	let newContacts = [];
 
 	for(let i = 0; i < contacts.length; i++){
@@ -22,7 +22,7 @@ function removeContact() {
   console.log("Contact removed successfully.");
 }
 function findContactByPhone() {
-  const phoneNumber = prompt("Enter phone number to find: ");
+  let phoneNumber = prompt("Enter phone number to find: ");
   let found = false;
 for (let i = 0; i < contacts.length; i++) {
     if (contacts[i].phoneNumber === phoneNumber) {
@@ -35,12 +35,12 @@ if (!found) {
     console.log("Contact not found.");
   }
 }
-function findContactByName() {
-  const name = prompt("Enter first or last name to find: ");
+function findContactByFirstName() {
+  const firstName = prompt("Enter first name to find: ");
   let found = false;
 
   for (let i = 0; i < contacts.length; i++) {
-    if (contacts[i].firstName === name || contacts[i].lastName === name) {
+    if (contacts[i].firstName === firstName) {
       console.log("Found contact: " + contacts[i].firstName + " " + contacts[i].lastName);
       found = true;
       break;
@@ -50,7 +50,24 @@ function findContactByName() {
   if (!found) {
     console.log("Contact not found.");
   }
+}  
+function findContactByLastName() {
+  const lastName = prompt("Enter last name to find: ");
+  let found = false;
+
+  for (let i = 0; i < contacts.length; i++) {
+    if (contacts[i].lastName === lastName) {
+      console.log("Found contact: " + contacts[i].firstName + " " + contacts[i].lastName);
+      found = true;
+      break;
+    }
   }
+
+  if (!found) {
+    console.log("Contact not found.");
+  }
+}
+ 
 function editContact() {
   const phoneNumber = prompt("Enter phone number of contact to edit: ");
   let found = false;
@@ -75,9 +92,40 @@ function menu() {
   console.log("1. Add Contact");
   console.log("2. Remove Contact");
   console.log("3. Find Contact by Phone Number");
-  console.log("4. Find Contact by Name");
-  console.log("5. Edit Contact");
-  console.log("6. Exit");
-const choice = prompt("Choose an option: ");
+  console.log("4. Find Contact by First Name");
+  console.log("5. Find Contact by Last Name");
+  console.log("6. Edit Contact");
+  console.log("7. Exit");
 
+  const choice = prompt("Choose an option: ");
 
+  switch (choice) {
+    case "1":
+      addContact();
+      break;
+    case "2":
+      removeContact();
+      break;
+    case "3":
+      findContactByPhone();
+      break;
+    case "4":
+      findContactByFirstName();
+      break;
+    case "5":
+      findContactByLastName();
+      break;
+    case "6":
+      editContact();
+      break;
+    case "7":
+      console.log("Exiting Phone Book App.");
+      return;
+    default:
+      console.log("Invalid choice. Try again.");
+  }
+
+  menu();
+}
+
+menu();

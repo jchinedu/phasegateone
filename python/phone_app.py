@@ -26,3 +26,22 @@ def find_contact_by_first_name():
             print("Found:", ccontact["first_name"], contact["last_name"])
             return
     print("Contact not found.")
+def find_contact_by_last_name():
+    last = input("Enter last name to find: ")
+    for c in contacts:
+        if contact["last_name"] == last:
+            print("Found:", contact["first_name"], contact["last_name"])
+            return
+    print("Contact not found.")
+def edit_contact():
+    phone = input("Enter phone number to edit: ")
+    for contact in contacts:
+        if contact["phone_number"] == phone:
+            contact["first_name"] = input("Enter new first name: ")
+            contact["last_name"] = input("Enter new last name: ")
+            contact["phone_number"] = input("Enter new phone number: ")
+            print("Contact updated.")
+            return
+    print("Contact not found.")
+
+

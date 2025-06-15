@@ -43,6 +43,45 @@ for (let i = 0; i < productNames.length; i++) {
   console.log(productNames[i] + " - Qty: " + quantities[i] + ", Price: " + unitPrices[i] + ", Total: " + lineTotal);
 }
 
+console.log("Subtotal: " + subtotal);
+console.log("Discount (" + discountPercent + "%): " + discountAmount);
+console.log("VAT @7.5%: " + vat);
+console.log("Total Due: " + totalDue);
+console.log();
+
+function handlePayment(totalDue) {
+  while (true) {
+    console.log("Select payment method:");
+    console.log("1. Cash");
+    console.log("2. Card");
+    console.log("3. Mobile Money");
+    let paymentChoice = Number(prompt("Enter your choice: "));
+    if (![1, 2, 3].includes(paymentChoice)) {
+      console.log("Invalid payment method. Try again.");
+      continue;
+    }
+    switch (paymentChoice) {
+      case 1:
+        let amountPaid = Number(prompt("Enter amount paid: "));
+        while (isNaN(amountPaid) || amountPaid < totalDue) {
+          amountPaid = Number(prompt("Insufficient amount. Enter at least " + totalDue + ": "));
+        }
+        let change = amountPaid - totalDue;
+        console.log("Change: " + change);
+        return amountPaid;
+      case 2:
+        let cardNumber = prompt("Enter card number: ");
+        console.log("Payment of " + totalDue + " processed via card ending with " + cardNumber);
+        return totalDue;
+      case 3:
+        let mmRef = prompt("Enter mobile money reference: ");
+        console.log("Payment of " + totalDue + " processed with reference " + mmRef);
+        return totalDue;
+    }
+  }
+}
+
+
 
 
 

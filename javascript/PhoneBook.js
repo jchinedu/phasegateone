@@ -40,3 +40,20 @@ function findContactByPhone() {
         console.log("Contact not found.");
     }
 }
+function findContactByFirstName() {
+    let first = prompt("Enter first name to find:");
+    let contact = null;
+
+    for (let i = 0; i < contacts.length; i++) {
+        if (contacts[i].first_name === first) {
+            contact = contacts[i];
+            break;
+        }
+    }
+
+    if (contact) {
+        console.log("Found:", contact.first_name, contact.last_name);
+    } else {
+        console.log("Contact not found.");
+    }
+}

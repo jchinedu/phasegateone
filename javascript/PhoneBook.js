@@ -57,3 +57,20 @@ function findContactByFirstName() {
         console.log("Contact not found.");
     }
 }
+function findContactByLastName() {
+    let last = prompt("Enter last name to find:");
+    let contact = null;
+
+    for (let i = 0; i < contacts.length; i++) {
+        if (contacts[i].last_name === last) {
+            contact = contacts[i];
+            break;
+        }
+    }
+
+    if (contact) {
+        console.log("Found:", contact.first_name, contact.last_name);
+    } else {
+        console.log("Contact not found.");
+    }
+}

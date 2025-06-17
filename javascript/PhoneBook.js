@@ -74,3 +74,24 @@ function findContactByLastName() {
         console.log("Contact not found.");
     }
 }
+function editContact() {
+    let phone = prompt("Enter phone number to edit:");
+    let contact = null;
+
+    for (let i = 0; i < contacts.length; i++) {
+        if (contacts[i].phone_number === phone) {
+            contact = contacts[i];
+            break;
+        }
+    }
+
+    if (contact) {
+        contact.first_name = prompt("Enter new first name:");
+        contact.last_name = prompt("Enter new last name:");
+        contact.phone_number = prompt("Enter new phone number:");
+        console.log("Contact updated.");
+    } else {
+        console.log("Contact not found.");
+    }
+}
+

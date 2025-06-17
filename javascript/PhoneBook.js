@@ -10,3 +10,16 @@ function addcontact(){
     console.log("Contact added.")
 }
 
+function removeContact() {
+    let phone = prompt("Enter phone number to remove:");
+    let updatedContacts = [];
+
+    for (let i = 0; i < contacts.length; i++) {
+        if (contacts[i].phone_number !== phone) {
+            updatedContacts.push(contacts[i]);
+        }
+    }
+
+    contacts = updatedContacts;
+    console.log("Contact removed.");
+}

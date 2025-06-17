@@ -2,11 +2,11 @@ const prompt = require('prompt-sync')();
 
 contacts = []
 
-function addcontact(){
+function addContact(){
     first = prompt("Enter first name: ")
     last = prompt("Enter last name: ")
     phone = prompt("Enter phone number: ")
-    contacts.append({"first_name": first, "last_name": last, "phone_number": phone})
+    contacts.push({"first_name": first, "last_name": last, "phone_number": phone})
     console.log("Contact added.")
 }
 
@@ -94,4 +94,46 @@ function editContact() {
         console.log("Contact not found.");
     }
 }
+function menu() {
+    while (true) {
+        console.log("\nPhone Book");
+        console.log("1. Add Contact");
+        console.log("2. Remove Contact");
+        console.log("3. Find by Phone");
+        console.log("4. Find by First Name");
+        console.log("5. Find by Last Name");
+        console.log("6. Edit Contact");
+        console.log("7. Exit");
+
+        const choice = prompt("Choose option: ");
+
+        switch (choice) {
+            case "1":
+                addContact();
+                break;
+            case "2":
+                removeContact();
+                break;
+            case "3":
+                findContactByPhone();
+                break;
+            case "4":
+                findContactByFirstName();
+                break;
+            case "5":
+                findContactByLastName();
+                break;
+            case "6":
+                editContact();
+                break;
+            case "7":
+                console.log("Goodbye!");
+                return;
+            default:
+                console.log("Invalid option.");
+        }
+    }
+}
+
+menu();
 

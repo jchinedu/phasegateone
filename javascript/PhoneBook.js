@@ -23,3 +23,20 @@ function removeContact() {
     contacts = updatedContacts;
     console.log("Contact removed.");
 }
+function findContactByPhone() {
+    let phone = prompt("Enter phone number to find:");
+    let contact = null;
+
+    for (let i = 0; i < contacts.length; i++) {
+        if (contacts[i].phone_number === phone) {
+            contact = contacts[i];
+            break;
+        }
+    }
+
+    if (contact) {
+        console.log("Found:", contact.first_name, contact.last_name);
+    } else {
+        console.log("Contact not found.");
+    }
+}

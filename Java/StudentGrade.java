@@ -1,14 +1,21 @@
 import java.util.Scanner;
-
 public class StudentGrade {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
+ while(true){
         System.out.print("How many students do you have: ");
-        int numberOfStudents = input.nextInt();
-
+        int numberOfStudents = input.nextInt(); 
+	if(numberOfStudents < 0) {
+	System.out.print("invalid input, try again: ");
+	}
+	if(numberOfStudents >= 0) {
+	break;
+	}
+	}            
+	
         System.out.print("How many subjects do they offer: ");
         int numberOfSubjects = input.nextInt();
+	
 
         int[][] scores = new int[numberOfStudents][numberOfSubjects];
 

@@ -1,20 +1,41 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 public class StudentGrade {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
- while(true){
+	int numberOfStudents;
+	int numberOfSubjects;
+	while (true) {
+            try {
+              
         System.out.print("How many students do you have: ");
-        int numberOfStudents = input.nextInt(); 
-	if(numberOfStudents < 0) {
-	System.out.print("invalid input, try again: ");
-	}
-	if(numberOfStudents >= 0) {
-	break;
-	}
-	}            
-	
+        numberOfStudents = input.nextInt(); 
+	 if (numberOfStudents <= 0) {
+                    System.out.println("Please enter a positive number.");
+                } else {
+                    break;  
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid integer.");
+                input.next(); 
+            }
+        }           
+	while (true) {
+            try {
+              
+
         System.out.print("How many subjects do they offer: ");
-        int numberOfSubjects = input.nextInt();
+        numberOfSubjects = input.nextInt();
+	if (numberOfSubjects <= 0) {
+                    System.out.println("Please enter a positive number.");
+                } else {
+                    break;  
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid integer.");
+                input.next(); 
+            }
+        }
 	
 
         int[][] scores = new int[numberOfStudents][numberOfSubjects];
@@ -45,7 +66,7 @@ public class StudentGrade {
         System.out.print("Enter pass mark: ");
         int passMark = input.nextInt();
 
-        int option;
+        int option = -1;
         do {
             System.out.println("\n=== MENU ===");
             System.out.println("1. Display Student Table");
@@ -53,7 +74,9 @@ public class StudentGrade {
             System.out.println("3. Display Class Summary");
             System.out.println("0. Exit");
             System.out.print("Choose an option: ");
-            option = input.nextInt();
+	 try {
+                option = input.nextInt();
+     
 
      switch (option) {
                 case 1:
@@ -75,6 +98,10 @@ public class StudentGrade {
                 default:
                     System.out.println("Invalid option. Try again.");
        }
+	} catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number.");
+                input.next(); 
+            }
 
   } while (option != 0);
  }

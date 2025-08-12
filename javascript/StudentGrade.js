@@ -90,7 +90,7 @@ for (let i = 0; i < numberOfSubjects; i++) {
         lowestStudent = student + 1;
       }
     }
-const average = total / numberOfStudents;
+let average = total / numberOfStudents;
 
     console.log("SUBJECT SUMMARY");
     console.log(`Subject ${i + 1}`);
@@ -106,8 +106,8 @@ const average = total / numberOfStudents;
     console.log(`  Number of Fails: ${failures}`);
   }
 }
-const numberOfStudents = parseInt(prompt("How many students do you have: "));
-const numberOfSubjects = parseInt(prompt("How many subjects do they offer: "));
+let numberOfStudents = parseInt(prompt("How many students do you have: "));
+let numberOfSubjects = parseInt(prompt("How many subjects do they offer: "));
 
 const scores = [];
 
@@ -129,11 +129,11 @@ for (let i = 0; i < numberOfStudents; i++) {
   scores.push(studentScores);
 }
 
-const totals = calculateTotals(scores);
-const averages = calculateAverages(totals, numberOfSubjects);
-const positions = checkPosition(totals);
+let totals = calculateTotals(scores);
+let averages = calculateAverages(totals, numberOfSubjects);
+let positions = checkPosition(totals);
 
-const passMark = parseInt(prompt("Enter pass mark: "));
+let passMark = parseInt(prompt("Enter pass mark: "));
 
 let option;
 do {

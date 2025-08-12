@@ -49,7 +49,7 @@ def menu():
         print("1. Add Contact")
         print("2. Remove Contact")
         print("3. Find by Phone")
-        print("4. Find by First Name")
+ 
         print("5. Find by Last Name")
         print("6. Edit Contact")
         print("7. Exit")
@@ -68,7 +68,7 @@ def menu():
             find_contact_by_last_name()
         elif choice == "6":
             edit_contact()
-        elif choice == "7":
+        elif choice == "7": 
             print("Goodbye!")
             break
         else:

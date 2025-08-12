@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.InputMismatchException;
 
 
 public class SemiColonStoreCheckout {
@@ -26,25 +27,46 @@ public static void main(String[] args) {
     }
 
     System.out.print("Enter unit price: ");
-    while (!input.hasNextDouble()) {
+    /*while (!input.hasNextDouble()) {
+	
         System.out.print("Invalid input. Enter a valid number: ");
         input.next();
-    }
-    double price = input.nextDouble();
+    }*/
+while(true){
+	try{
+	  System.out.print("Invalid input. Enter a valid number: ");
+	double price = input.nextDouble();
+	if(price < 0) {
+	System.out.print("invalid input");	
+	}else {
+	 break;
+	}
+	
+	
 
     System.out.print("Enter quantity purchased: ");
-    while (!input.hasNextInt()) {
-        System.out.print("Invalid input. Enter a valid integer: ");
-        input.next();
-    }
+    //while (!input.hasNextInt()) {
+       // System.out.print("Invalid input. Enter a valid integer: ");
+    //   input.next();
+   // }
     int qty = input.nextInt();
-    input.nextLine(); 
+	if(qty < 0) {
+	System.out.print("quantity can not be zero");
+	}else{
+	break;
+	}
+   // input.nextLine(); 
 
     productNames.add(product);
     unitPrices.add(price);
     quantities.add(qty);
-}
+} catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid integer.");
+                input.next(); 
+            }
+        }
 
+}
 	
 		System.out.print("Enter cashier name: ");
         String cashierName = input.nextLine();

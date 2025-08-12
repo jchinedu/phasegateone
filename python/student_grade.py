@@ -67,11 +67,33 @@ def subject_summary(scores, pass_mark):
         print(f"  Number of Passes: {passes}")
         print(f"  Number of Fails: {failures}")
 def main():
-    number_of_students = int(input("How many students do you have: "))
-    number_of_subjects = int(input("How many subjects do they offer: "))
+   while True:
+        try:
+            number_of_students = int(input("How many students do you have: "))
+        except ValueError:
+            print("That was not a number. Please enter a whole number.")
+            continue
 
-    scores = []
-    for i in range(number_of_students):
+        if number_of_students <= 0:
+            print("Number of students must be positive.")
+            continue
+        else:
+            break
+
+   while True:
+        try:
+            number_of_subjects = int(input("How many subjects do they offer: "))
+        except ValueError:
+            print("That was not a number. Please enter a whole number.")
+            continue
+
+        if number_of_subjects <= 0:
+            print("Number of subjects must be positive.")
+            continue
+        else:
+            break
+   scores = []
+   for i in range(number_of_students):
         print(f"Enter scores for Student {i + 1}")
         student_scores = []
         for j in range(number_of_subjects):
@@ -84,26 +106,34 @@ def main():
             print("Saved successfully")
             student_scores.append(score)
         scores.append(student_scores)
-    totals = calculate_totals(scores)
-    averages = calculate_averages(totals, number_of_subjects)
-    positions = check_position(totals)
+   totals = calculate_totals(scores)
+   averages = calculate_averages(totals, number_of_subjects)
+   positions = check_position(totals)
 
-    pass_mark = int(input("Enter pass mark: "))
+   pass_mark = int(input("Enter pass mark: "))
 
-    option = None
-    while option != 0:
+ 
+   option = None
+   while option != 0:
         print("\n=== MENU ===")
         print("1. Display Student Table")
         print("2. Display Subject Summary")
         print("3. Display Class Summary")
         print("0. Exit")
-        option = int(input("Choose an option: "))
+
+        try:
+            option = int(input("Choose an option: "))
+        except ValueError:
+            print("Please enter a valid option.")
+            continue
 
         if option == 1:
             display_table(scores, totals, averages, positions)
         elif option == 2:
             subject_summary(scores, pass_mark)
             print("===========================================================")
+        elif option == 3:
+            class_summary(scores, pass_mark)
         elif option == 0:
             print("Exiting..")
         else:
